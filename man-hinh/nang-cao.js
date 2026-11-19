@@ -25,7 +25,8 @@ function nhacText(cay, ma) {
     moTa: 'Nhìn mực nước bể chậu, cạn mới đổ. Mùa mưa chỉ đổ nửa bể. ' + location.origin + '/c/' + ma };
 }
 
-function ngayMai() { return new Date(Date.parse(homNay() + 'T00:00:00+07:00') + 864e5).toISOString().slice(0, 10).replace(/-/g, ''); }
+// Ngày mai theo giờ VN, dạng yyyymmdd (tính trên mốc 12:00 UTC để không lệch ngày)
+function ngayMai() { return new Date(Date.parse(homNay() + 'T12:00:00Z') + 864e5).toISOString().slice(0, 10).replace(/-/g, ''); }
 
 function taiLichNhac(cay, ma) {
   const t = nhacText(cay, ma), ngay = ngayMai();
