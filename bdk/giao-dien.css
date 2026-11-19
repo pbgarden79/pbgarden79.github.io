@@ -1,0 +1,44 @@
+/* Giao diện bảng điều khiển – chép từ he-thong-5-ai/B1_khung.html (19/11/2026) */
+:root{--nen:#f4f6f1;--the:#fff;--chu:#1f2a1f;--phu:#5d6b5d;--mo:#8a978a;--vien:#e2e7dd;--xanh:#2f6b3a;--xanh-nhat:#e5f1e3;--cam:#a85a12;--cam-nhat:#fbefdc;--do:#a83232;--do-nhat:#fbe6e6;--menu:#1f3d26}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--nen);color:var(--chu);font-size:15px}
+.khung{display:grid;grid-template-columns:220px minmax(0,1fr);min-height:100vh}
+nav{background:var(--menu);color:#dfe9dd;padding:18px 12px;position:sticky;top:0;height:100vh;overflow-y:auto}
+nav .ten{font-weight:600;font-size:17px;color:#fff;margin:0 8px 2px}
+nav .phu{font-size:12px;color:#a9c0a6;margin:0 8px 18px}
+nav .nhom{font-size:11px;letter-spacing:.06em;color:#8fae8b;margin:16px 8px 6px}
+nav button{display:flex;gap:10px;align-items:center;width:100%;border:0;background:none;color:inherit;font:inherit;padding:9px 10px;border-radius:8px;cursor:pointer;text-align:left}
+nav button:hover{background:#2b5233}
+nav button.dang{background:#fff;color:var(--menu);font-weight:600}
+nav .sau{font-size:12px;color:#8fae8b;margin:18px 8px 0;line-height:1.5}
+main{padding:22px 26px;max-width:1100px}
+.dau{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.dau h1{font-size:22px;margin:0}
+.dau .luc{font-size:13px;color:var(--mo)}
+.dau button{border:1px solid var(--vien);background:var(--the);border-radius:8px;padding:6px 12px;font:inherit;font-size:13px;cursor:pointer}
+.luoi{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-bottom:12px}
+.luoi2{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr));margin-bottom:12px}
+.the{background:var(--the);border:1px solid var(--vien);border-radius:12px;padding:14px 16px}
+.the h2{font-size:15px;margin:0 0 10px}
+.so{font-size:28px;font-weight:600;line-height:1.2}
+.nhan{font-size:13px;color:var(--phu)}
+.nho{font-size:12px;color:var(--mo)}
+.dong{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:7px 0;border-top:1px solid var(--vien);font-size:14px}
+.dong>span:last-child{flex-shrink:0}
+.dong>span:first-child{min-width:0;overflow-wrap:anywhere}
+html,body{max-width:100%;overflow-x:hidden}
+main,.the{min-width:0}
+.dong:first-of-type{border-top:0}
+.the2{font-size:12px;padding:2px 9px;border-radius:999px;white-space:nowrap}
+.t-xanh{background:var(--xanh-nhat);color:var(--xanh)}.t-cam{background:var(--cam-nhat);color:var(--cam)}.t-do{background:var(--do-nhat);color:var(--do)}.t-xam{background:#eef0ec;color:var(--phu)}
+.thanh{height:8px;background:#e8ece5;border-radius:99px;overflow:hidden;margin:8px 0 4px}.thanh i{display:block;height:100%;background:var(--xanh)}
+.trong{color:var(--mo);font-size:14px;padding:6px 0}
+.loi{background:var(--do-nhat);color:var(--do);padding:12px 14px;border-radius:10px}
+svg text{font-size:11px;fill:var(--mo)}
+@media (max-width:760px){
+ .khung{grid-template-columns:1fr}
+ nav{padding:10px 8px;height:auto;z-index:2;overflow-x:auto;white-space:nowrap}
+ nav .ten,nav .phu,nav .nhom,nav .sau{display:none}
+ nav button{display:inline-flex;width:auto;padding:7px 11px;font-size:14px}
+ main{padding:14px 16px}
+}
