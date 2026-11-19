@@ -25,7 +25,16 @@ async function khoiDong() {
   const nd = await napNoiDung();
   const ma = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
   goc.textContent = '';
-  if (!ma || !nd.combo[ma] || !nd.cay[nd.combo[ma].cay]) {
+  if (!ma) { // vào thẳng trang chủ (không quét QR) → cho nhập mã cây in trên thẻ
+    const o = h('input', { type: 'text', placeholder: 'Ví dụ: C001', maxlength: '10', autocapitalize: 'characters' });
+    const di = () => { const v = o.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); if (v) location.href = '/?c=' + v; };
+    o.onkeydown = e => { if (e.key === 'Enter') di(); };
+    goc.append(h('section', { class: 'the' }, h('h2', {}, '🌿 Cây của bạn'),
+      h('p', {}, 'Quét mã QR trên thẻ chăm, hoặc nhập mã cây in trên thẻ:'),
+      h('label', {}, 'Mã cây', o), h('button', { class: 'nut', onclick: di }, 'Xem cách chăm'), nutLienHe(nd.lienHe)));
+    return;
+  }
+  if (!nd.combo[ma] || !nd.cay[nd.combo[ma].cay]) {
     goc.append(h('section', { class: 'the' }, h('h2', {}, 'Pb Garden 79'), h('p', {}, nd.loiNhan.khong_thay_ma), nutLienHe(nd.lienHe)));
     return;
   }

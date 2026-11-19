@@ -36,6 +36,17 @@ Bản chạy thật: https://pbgarden79.github.io (kho GitHub pbgarden79/pbgarde
 
 `chua_dang_nhap` · `can_dong_y` · `sdt_sai` · `tam_khoa` · `sai_ma`
 
-## Dữ liệu thử
+## Cách cập nhật lên GitHub
 
-Combo C001 · SĐT 0888200077 · mã thử TEST2026 · đã kích hoạt 19/11, hạn 26/11. Xóa trước khi mở cho khách thật.
+Sửa file ở thư mục này → tải đúng file đó lên kho `pbgarden79/pbgarden79.github.io` (trang Upload files của đúng thư mục) → GitHub Pages tự đăng lại sau 1–2 phút.
+Thêm combo mới: thêm mã vào `noi-dung/combo.json` (công khai) + tạo dòng trong bảng Supabase `combo` kèm mã kích hoạt băm (bí mật).
+
+## Dữ liệu thử (xóa trước khi mở cho khách thật)
+
+| Combo | SĐT | Mã thử | Trạng thái |
+|---|---|---|---|
+| C001 | 0888200077 | TEST2026 | Đã kích hoạt 19/11 (thử bằng API) |
+| C002 | 0888200077 | TEST2027 | Đã kích hoạt 19/11 (thử trên trang) |
+| C003 | 0888200077 | PB79IPHONE | Chưa dùng – để chủ shop thử trên iPhone |
+
+Hạn chung của số thử: 26/11/2026. C002, C003 chỉ có trong Supabase (trang mở bằng /c/C001, mã kích hoạt nào của số đó cũng nhận).
