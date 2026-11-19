@@ -36,7 +36,7 @@ main,.the{min-width:0}
 .loi{background:var(--do-nhat);color:var(--do);padding:12px 14px;border-radius:10px}
 svg text{font-size:11px;fill:var(--mo)}
 @media (max-width:760px){
- .khung{grid-template-columns:1fr}
+ .khung{grid-template-columns:minmax(0,1fr)}
  nav{padding:10px 8px;height:auto;z-index:2;overflow-x:auto;white-space:nowrap}
  nav .ten,nav .phu,nav .nhom,nav .sau{display:none}
  nav button{display:inline-flex;width:auto;padding:7px 11px;font-size:14px}
