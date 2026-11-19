@@ -42,3 +42,11 @@ svg text{font-size:11px;fill:var(--mo)}
  nav button{display:inline-flex;width:auto;padding:7px 11px;font-size:14px}
  main{padding:14px 16px}
 }
+/* Giai đoạn 3: nút thao tác nhỏ */
+.nut-nho{border:1px solid var(--vien);background:var(--the);border-radius:8px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer;margin-left:6px;white-space:nowrap}
+.nut-nho.chinh{background:var(--xanh);border-color:var(--xanh);color:#fff}
+.cum-nut{display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end}
+.cum-nut .nut-nho{margin-left:0}
+.form-cb{display:grid;gap:8px;grid-template-columns:repeat(auto-fit,minmax(min(180px,100%),1fr));align-items:end}
+.form-cb label{font-size:12px;color:var(--phu);display:block;margin-bottom:3px}
+.form-cb input,.form-cb select{width:100%;font:inherit;padding:8px 10px;border:1px solid var(--vien);border-radius:8px;background:#fff}

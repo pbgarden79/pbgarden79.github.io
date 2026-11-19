@@ -28,6 +28,44 @@ async function moMan(ten) {
   try { m.ve(d, nd); } catch (e) { nd.replaceChildren(h('div', { class: 'loi' }, 'Lỗi hiển thị: ' + e.message)); }
 }
 
+// ── GIAI ĐOẠN 3: nút thao tác. Lệnh ghi vào Supabase bdk_lenh; Apps Script làm trong ≤ 5 phút, báo lại Telegram + khung "Lệnh gần đây".
+const TEN_TB = { hum: 'Quạt hơi nước (tạo ẩm)', light: 'Đèn trồng cây', fan: 'Quạt thông gió', tat_ca: 'Tất cả thiết bị' };
+function moTaLenh(l) {
+  const p = l.tham_so || {};
+  if (l.loai === 'thiet_bi') return (TEN_TB[p.tb] || p.tb) + ' → ' + ({ on: 'BẬT', off: 'TẮT', auto: 'tự động' })[p.che_do];
+  if (l.loai === 'xong_viec') return 'Xong việc ' + p.ma;
+  if (l.loai === 'hoan_viec') return 'Dời việc ' + p.ma + ' +' + (p.ngay || 1) + ' ngày';
+  if (l.loai === 'tao_combo') return 'Tạo combo ' + p.loai + ' · SĐT …' + String(p.sdt || '').slice(-3);
+  return l.loai;
+}
+
+async function guiLenh(loai, thamSo, cauHoi) {
+  if (!confirm(cauHoi + '\n\nHệ thống làm trong khoảng 5 phút và báo lại trên Telegram.')) return false;
+  const { error } = await SB.from('bdk_lenh').insert({ loai, tham_so: thamSo });
+  if (error) { alert(/qua_nhieu_lenh/.test(error.message) ? 'Anh bấm hơi nhiều, chờ vài phút rồi thử lại.' : 'Chưa gửi được lệnh: ' + error.message); return false; }
+  hienLenhGanDay();
+  return true;
+}
+
+/** Khung "Lệnh gần đây" — đặt cuối các màn có nút. */
+function oLenhGanDay() {
+  const el = the('🖥️ Lệnh gần đây từ bảng', h('div', { id: 'lenh-gan-day' }, trong('Đang đọc…')));
+  setTimeout(hienLenhGanDay, 0);
+  return el;
+}
+async function hienLenhGanDay() {
+  const el = document.getElementById('lenh-gan-day');
+  if (!el) return;
+  const { data, error } = await SB.from('bdk_lenh').select('loai,tham_so,trang_thai,ket_qua,tao_luc').order('id', { ascending: false }).limit(8);
+  if (error) return el.replaceChildren(trong('Chưa đọc được lệnh: ' + error.message));
+  const MAU = { cho: ['chờ ≤ 5 phút', 'cam'], dang: ['đang làm', 'cam'], xong: ['xong', 'xanh'], loi: ['lỗi', 'do'], het_han: ['bỏ (quá 30 phút)', 'xam'] };
+  el.replaceChildren(...(data && data.length ? data.map(l => h('div', { class: 'dong' },
+    h('span', {}, moTaLenh(l), h('div', { class: 'nho' }, new Date(l.tao_luc).toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' }) +
+      (l.ket_qua && l.trang_thai !== 'cho' ? ' · ' + l.ket_qua.split('\n')[0] : ''))),
+    nhan(...(MAU[l.trang_thai] || [l.trang_thai, 'xam'])))) : [trong('Chưa có lệnh nào.')]));
+}
+function nutNho(chu, onclick, chinh) { return h('button', { class: 'nut-nho' + (chinh ? ' chinh' : ''), onclick }, chu); }
+
 async function moBang() {
   document.getElementById('dang-nhap').hidden = true;
   document.getElementById('bang').hidden = false;
