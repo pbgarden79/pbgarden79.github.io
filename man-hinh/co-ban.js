@@ -7,6 +7,8 @@ function manHinhCoBan(nd, ma) {
     h('p', {}, [combo.chau, combo.gia_the].filter(Boolean).join(' · ')),
     h('h3', {}, 'Cách chăm cây này'),
     h('ul', { class: 'cham' }, ...cay.cham.map(dong => h('li', {}, dong))),
+    cay.nguon ? h('p', { class: 'nho' }, 'Nguồn: ', ...cay.nguon.flatMap((n, i) => [
+      i ? ' · ' : '', h('a', { href: n.link, target: '_blank', rel: 'noopener' }, n.ten)])) : '',
     nutLienHe(nd.lienHe));
 }
 
