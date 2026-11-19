@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Pb Garden 79</title>
+<script>
+  // Địa chỉ QR cố định /c/C001 → trang chính /?c=C001 (GitHub Pages không có máy chủ định tuyến).
+  var m = location.pathname.match(/^\/c\/([A-Za-z0-9]{1,10})\/?$/);
+  location.replace(m ? '/?c=' + m[1].toUpperCase() : '/');
+</script>
+</head>
+<body>Đang chuyển…</body>
+</html>

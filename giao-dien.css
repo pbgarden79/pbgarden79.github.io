@@ -1,0 +1,36 @@
+/* Giao diện chung – màu thương hiệu xanh lá. Sửa màu/chữ ở đây. */
+:root { --xanh-dam: #0f5a2e; --xanh: #4fa82e; --nen: #f3f6f1; --chu: #1d2b1f; --nhat: #5b6b5d; --vien: #e3eadf; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--nen); color: var(--chu); }
+header { background: var(--xanh-dam); color: #fff; padding: 14px 16px; }
+header strong { font-size: 18px; display: block; }
+header span { font-size: 13px; opacity: .85; }
+main { max-width: 560px; margin: 0 auto; padding: 8px 16px 24px; }
+.the { background: #fff; border-radius: 14px; padding: 14px 16px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+h2 { font-size: 20px; margin: 4px 0 6px; }
+h3 { font-size: 16px; margin: 16px 0 8px; }
+.the h3:first-child { margin-top: 0; }
+p { line-height: 1.5; margin: 6px 0; }
+.nho { font-size: 13px; color: var(--nhat); }
+ul.cham { list-style: none; padding: 0; margin: 0; }
+ul.cham li { padding: 8px 0; border-bottom: 1px solid var(--vien); line-height: 1.45; }
+ul.cham li:last-child { border: 0; }
+.nut { display: block; width: 100%; text-align: center; background: var(--xanh); color: #fff; border: 0; font: inherit; font-weight: 700;
+  padding: 12px; border-radius: 10px; margin-top: 10px; text-decoration: none; cursor: pointer; }
+.nut.phu { background: #fff; color: var(--xanh-dam); border: 1.5px solid var(--xanh); }
+.nut:disabled { opacity: .6; }
+label { display: block; margin: 10px 0; font-size: 14px; }
+input[type=tel], input[type=text] { display: block; width: 100%; margin-top: 4px; padding: 11px 12px; font-size: 16px; border: 1px solid #c9d4c4; border-radius: 10px; }
+label.tich { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--nhat); line-height: 1.45; }
+label.tich input { margin-top: 3px; width: 18px; height: 18px; flex: none; }
+.bao { color: #b3261e; font-size: 14px; min-height: 1em; }
+.bao.xanh { color: var(--xanh-dam); font-weight: 600; }
+.han { font-size: 18px; font-weight: 700; color: var(--xanh-dam); }
+.cac-goi { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.goi { border: 1.5px solid var(--vien); border-radius: 12px; padding: 12px; position: relative; }
+.goi.noi-bat { border-color: var(--xanh); }
+.goi .gia { font-size: 17px; font-weight: 700; margin: 4px 0; }
+.goi .nhan { position: absolute; top: -10px; right: 10px; background: var(--xanh); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 10px; }
+.lien-he { margin-top: 12px; }
+a { color: var(--xanh-dam); }
+footer { font-size: 12px; color: #7a887c; text-align: center; padding: 0 16px 24px; }
