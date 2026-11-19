@@ -5,8 +5,9 @@
 <title>Pb Garden 79</title>
 <script>
   // Địa chỉ QR cố định /c/C001 → trang chính /?c=C001 (GitHub Pages không có máy chủ định tuyến).
+  // Gõ /BDK, /Bdk… (sai chữ hoa) → bảng điều khiển chủ shop /bdk/
   var m = location.pathname.match(/^\/c\/([A-Za-z0-9]{1,10})\/?$/);
-  location.replace(m ? '/?c=' + m[1].toUpperCase() : '/');
+  location.replace(/^\/bdk\b/i.test(location.pathname) ? '/bdk/' : m ? '/?c=' + m[1].toUpperCase() : '/');
 </script>
 </head>
 <body>Đang chuyển…</body>
