@@ -1,0 +1,1 @@
+Tôi đồng ý cho Pb Garden 79 lưu số điện thoại và thông tin cây tôi đã mua để: mở phần chăm sóc nâng cao, nhắc chăm cây, hỗ trợ bảo hành. Thông tin được lưu trên máy chủ Supabase tại Singapore, không bán hay chia sẻ cho bên khác, không đưa vào công cụ AI miễn phí. Tôi có thể yêu cầu xem, sửa hoặc xóa thông tin bất cứ lúc nào bằng cách nhắn Pb Garden 79.

@@ -1,0 +1,4 @@
+{
+  "_ghi_chu": "Mã combo trên QR → loại cây (khóa trong cay.json). Chỉ là mã công khai; mã kích hoạt bí mật nằm ở Supabase dạng mã hóa.",
+  "C001": { "cay": "philodendron-ring-of-fire", "goi": "A – Cơ bản", "chau": "Chậu tự tưới", "gia_the": "Giá thể thoáng trộn sẵn" }
+}

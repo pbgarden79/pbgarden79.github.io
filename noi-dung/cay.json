@@ -1,0 +1,16 @@
+{
+  "_ghi_chu": "Cách chăm cơ bản theo loại cây. Sửa chữ ở đây, không cần đụng code. kiem_tra_ngay = chu kỳ nhắc kiểm tra nước (tạm 7, chờ số liệu thử combo).",
+  "philodendron-ring-of-fire": {
+    "ten": "Philodendron Ring of Fire (cây đột biến)",
+    "bieu_tuong": "🌿",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "☀️ Đặt chỗ sáng nhất nhà hoặc dưới 💡 đèn trồng cây, tránh nắng gắt trực tiếp",
+      "💧 Nhìn mực nước bể chậu, cạn mới đổ; mùa mưa chỉ đổ nửa bể",
+      "🚫 Không để nước đọng đĩa lót",
+      "✂️ Nhánh mọc xanh trơn → cắt bỏ để cây giữ màu đột biến",
+      "🧪 Bón phân loãng, đều – bón nhiều dễ ra lá xanh trơn"
+    ],
+    "trang_thai": "Mẫu – chờ chủ shop duyệt nội dung"
+  }
+}

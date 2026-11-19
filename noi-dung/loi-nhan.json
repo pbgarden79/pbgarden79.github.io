@@ -1,0 +1,11 @@
+{
+  "_ghi_chu": "Câu báo theo mã lỗi của hàm kich_hoat (Supabase) và của trang.",
+  "chua_dang_nhap": "Chưa tạo được phiên trên máy này. Anh/chị tải lại trang rồi thử lại.",
+  "can_dong_y": "Anh/chị cần tích ô đồng ý để Pb Garden 79 lưu thông tin chăm cây.",
+  "sdt_sai": "Số điện thoại chưa đúng (10 số, bắt đầu bằng 0).",
+  "tam_khoa": "Nhập sai quá 5 lần. Tạm khóa 15 phút để bảo vệ tài khoản, anh/chị thử lại sau.",
+  "sai_ma": "Số điện thoại hoặc mã kích hoạt chưa đúng, hoặc mã đã được dùng. Kiểm tra mã in trên thẻ chăm.",
+  "loi_mang": "Mất kết nối. Anh/chị kiểm tra mạng rồi thử lại.",
+  "khong_thay_ma": "Không tìm thấy mã cây này. Anh/chị kiểm tra lại mã trên thẻ chăm hoặc nhắn shop.",
+  "kich_hoat_xong": "Kích hoạt thành công! Phần nâng cao mở miễn phí đến hết ngày"
+}
