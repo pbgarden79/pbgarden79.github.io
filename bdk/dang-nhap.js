@@ -54,20 +54,34 @@ async function manMa2Buoc(xong) {
   };
 }
 
-async function manCaiDat2Buoc(xong) {
-  // Bỏ các lần cài dở trước (chưa xác minh) rồi tạo mới
+const KHOA_CAI = 'pb_bdk_cai_2buoc';
+function docCaiDo() { try { return JSON.parse(sessionStorage.getItem(KHOA_CAI) || 'null'); } catch (e) { return null; } }
+function ghiCaiDo(v) { try { v ? sessionStorage.setItem(KHOA_CAI, JSON.stringify(v)) : sessionStorage.removeItem(KHOA_CAI); } catch (e) { /* trình duyệt chặn bộ nhớ */ } }
+
+async function manCaiDat2Buoc(xong, taoMoi) {
+  // iPhone hay tải lại trang khi chuyển qua app Authenticator rồi quay về → giữ nguyên mã QR đang cài dở (trong tab này),
+  // nếu không sẽ sinh mã mới và mã 6 số anh vừa quét bị báo sai. "Tạo mã QR mới" thì bỏ hết bản cài dở.
   const { data: ds } = await SB.auth.mfa.listFactors();
-  for (const f of (ds && ds.all || []).filter(x => x.status !== 'verified')) await SB.auth.mfa.unenroll({ factorId: f.id });
-  const { data, error } = await SB.auth.mfa.enroll({ factorType: 'totp', friendlyName: 'Google Authenticator' });
-  if (error) return oDangNhap(h('div', { class: 'loi' }, 'Chưa bật được xác minh 2 bước: ' + error.message));
+  const doDang = (ds && ds.all || []).filter(x => x.status !== 'verified');
+  const cu = docCaiDo();
+  let data = !taoMoi && cu && doDang.some(f => f.id === cu.id) ? cu : null;
+  if (!data) {
+    for (const f of doDang) await SB.auth.mfa.unenroll({ factorId: f.id });
+    const kq = await SB.auth.mfa.enroll({ factorType: 'totp', friendlyName: 'Google Authenticator ' + Date.now() });
+    if (kq.error) return oDangNhap(h('div', { class: 'loi' }, 'Chưa bật được xác minh 2 bước: ' + kq.error.message));
+    data = { id: kq.data.id, totp: { qr_code: kq.data.totp.qr_code, secret: kq.data.totp.secret } };
+    ghiCaiDo(data);
+  }
   const [lC, ma] = oNhap('Nhập mã 6 số đang hiện trong app', { inputmode: 'numeric', autocomplete: 'one-time-code', maxlength: '6' });
   const nut = h('button', {}, 'Bật xác minh 2 bước');
   oDangNhap(h('p', {}, 'Lần đầu: mở app Google Authenticator → dấu + → Quét mã QR. Không quét được thì chọn "Nhập khóa thiết lập" và gõ khóa bên dưới.'),
-    h('img', { src: data.totp.qr_code, alt: 'Mã QR xác minh 2 bước' }), h('code', {}, data.totp.secret), h('form', {}, lC, ma, nut));
+    h('img', { src: data.totp.qr_code, alt: 'Mã QR xác minh 2 bước' }), h('code', {}, data.totp.secret), h('form', {}, lC, ma, nut),
+    h('button', { class: 'phu-nut', onclick: () => manCaiDat2Buoc(xong, true) }, 'Tạo mã QR mới (xóa mục cũ trong app trước)'));
   nut.parentNode.onsubmit = async ev => {
     ev.preventDefault();
-    const { error: e2 } = await SB.auth.mfa.challengeAndVerify({ factorId: data.id, code: ma.value.trim() });
-    if (e2) return baoLoi('Mã chưa đúng, chờ mã mới rồi nhập lại.');
+    const { error: e2 } = await SB.auth.mfa.challengeAndVerify({ factorId: data.id, code: ma.value.replace(/\D/g, '') });
+    if (e2) return baoLoi('Mã chưa đúng. Kiểm tra đúng mục "Pb Garden" mới nhất trong app, chờ mã mới rồi nhập lại.');
+    ghiCaiDo(null);
     xong();
   };
 }
