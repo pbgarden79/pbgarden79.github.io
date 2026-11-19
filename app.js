@@ -34,6 +34,10 @@ async function khoiDong() {
       h('label', {}, 'Mã cây', o), h('button', { class: 'nut', onclick: di }, 'Xem cách chăm'), nutLienHe(nd.lienHe)));
     return;
   }
+  if (!nd.combo[ma]) { // combo mới tạo từ Telegram: hỏi Supabase mã này là cây gì (chỉ loại cây + gói, không dữ liệu khách)
+    const r = await sbFetch('/rest/v1/rpc/combo_cong_khai', { method: 'POST', body: { p_ma: ma } });
+    if (r.ok && r.data && r.data.cay) nd.combo[ma] = { cay: r.data.cay, goi: r.data.goi || '', chau: '', gia_the: '' };
+  }
   if (!nd.combo[ma] || !nd.cay[nd.combo[ma].cay]) {
     goc.append(h('section', { class: 'the' }, h('h2', {}, 'Pb Garden 79'), h('p', {}, nd.loiNhan.khong_thay_ma), nutLienHe(nd.lienHe)));
     return;

@@ -39,7 +39,7 @@ Bản chạy thật: https://pbgarden79.github.io (kho GitHub pbgarden79/pbgarde
 ## Cách cập nhật lên GitHub
 
 Sửa file ở thư mục này → tải đúng file đó lên kho `pbgarden79/pbgarden79.github.io` (trang Upload files của đúng thư mục) → GitHub Pages tự đăng lại sau 1–2 phút.
-Thêm combo mới: thêm mã vào `noi-dung/combo.json` (công khai) + tạo dòng trong bảng Supabase `combo` kèm mã kích hoạt băm (bí mật).
+Thêm combo mới (từ 19/11): anh gõ `/combo <SĐT> <loại cây>` trên Telegram → bấm ✅ → hệ thống tạo mã combo, mã kích hoạt, ảnh QR (Apps Script `A4b_Combo.gs`, Supabase `02_tao_combo.sql`). Không cần sửa `combo.json` – trang tự hỏi Supabase (`combo_cong_khai`). Thêm LOẠI CÂY mới thì mới sửa `noi-dung/cay.json`.
 
 ## Dữ liệu thử (xóa trước khi mở cho khách thật)
 
