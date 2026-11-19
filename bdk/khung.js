@@ -9,12 +9,19 @@ async function taiDuLieu() {
   if (!data || !data.length) throw new Error('Chưa có số liệu, hoặc tài khoản này chưa được cấp quyền chủ shop.');
 }
 
-function moMan(ten) {
+async function moMan(ten) {
   manDang = ten;
   document.querySelectorAll('#menu button[data-man]').forEach(b => b.classList.toggle('dang', b.dataset.man === ten));
-  const m = MAN[ten], nd = document.getElementById('noi-dung'), d = duLieu[ten];
+  const m = MAN[ten], nd = document.getElementById('noi-dung');
   document.getElementById('tieu-de').textContent = m.tieuDe;
-  if (!d) return nd.replaceChildren(trong('Chưa có số liệu cho màn này.'));
+  // Màn có hàm tai() (vd Combo) đọc sống từ Supabase; các màn khác dùng bản tóm tắt 15 phút
+  if (m.tai) {
+    nd.replaceChildren(trong('Đang đọc dữ liệu…'));
+    try { duLieu[ten] = await m.tai(); } catch (e) { return nd.replaceChildren(h('div', { class: 'loi' }, e.message || String(e))); }
+    if (manDang !== ten) return;
+  }
+  const d = duLieu[ten];
+  if (!d) return nd.replaceChildren(trong('Chưa có số liệu cho màn này. Hệ thống gửi số liệu mỗi 15 phút.'));
   document.getElementById('luc').textContent = 'Số liệu lúc ' + d.luc;
   nd.replaceChildren();
   if (d.loiDoc) return nd.append(h('div', { class: 'loi' }, 'Hệ thống chưa đọc được số liệu: ' + d.loiDoc));
