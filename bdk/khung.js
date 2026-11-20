@@ -64,7 +64,19 @@ async function hienLenhGanDay() {
       (l.ket_qua && l.trang_thai !== 'cho' ? ' · ' + l.ket_qua.split('\n')[0] : ''))),
     nhan(...(MAU[l.trang_thai] || [l.trang_thai, 'xam'])))) : [trong('Chưa có lệnh nào.')]));
 }
-function nutNho(chu, onclick, chinh) { return h('button', { class: 'nut-nho' + (chinh ? ' chinh' : ''), onclick }, chu); }
+/** Nút thao tác: bấm xong khóa lại "⏳ đã gửi" để không gửi trùng (20/11: bấm 2 lần → việc bị dời 2 ngày). */
+function nutNho(chu, onclick, chinh) {
+  const b = h('button', { class: 'nut-nho' + (chinh ? ' chinh' : '') }, chu);
+  b.onclick = async () => {
+    if (b.disabled) return;
+    b.disabled = true;
+    let ok = false;
+    try { ok = await onclick(); } finally {
+      if (ok) { b.textContent = '⏳ đã gửi'; b.classList.remove('chinh'); } else b.disabled = false;
+    }
+  };
+  return b;
+}
 
 async function moBang() {
   document.getElementById('dang-nhap').hidden = true;
