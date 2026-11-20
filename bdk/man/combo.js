@@ -26,8 +26,10 @@ MAN.combo = {
       const so = sdt.value.replace(/\D/g, '');
       if (!/^0\d{9}$/.test(so)) return alert('Số điện thoại chưa đúng (10 số, bắt đầu bằng 0).');
       if (!loai.value) return alert('Chọn loại cây.');
-      if (await guiLenh('tao_combo', { sdt: so, loai: loai.value, goi: goi.value.trim() },
-        'Tạo combo ' + loai.options[loai.selectedIndex].text + ' cho SĐT ' + so + '?\nMã kích hoạt và ảnh QR sẽ gửi về Telegram của anh.')) sdt.value = '';
+      const ok = await guiLenh('tao_combo', { sdt: so, loai: loai.value, goi: goi.value.trim() },
+        'Tạo combo ' + loai.options[loai.selectedIndex].text + ' cho SĐT ' + so + '?\nMã kích hoạt và ảnh QR sẽ gửi về Telegram của anh.');
+      if (ok) sdt.value = '';
+      return ok; // nút khóa "⏳ đã gửi" (nutNho) để không tạo 2 combo
     };
     el.append(the('➕ Tạo combo mới', h('div', { class: 'form-cb' },
       h('div', {}, h('label', {}, 'SĐT khách (anh đã duyệt)'), sdt), h('div', {}, h('label', {}, 'Loại cây'), loai),
