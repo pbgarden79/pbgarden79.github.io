@@ -13,7 +13,9 @@ MAN.combo = {
       the('Combo đã tạo', h('div', { class: 'so' }, String(d.combo.length)), h('div', { class: 'nhan' }, kh.length + ' đã kích hoạt')),
       the('Khách đã lưu', h('div', { class: 'so' }, String(d.so_khach)), h('div', { class: 'nhan' }, d.so_dong_y_uu_dai + ' đồng ý nhận ưu đãi')),
       the('Gói trả phí đang chạy', h('div', { class: 'so' }, String(d.goi_dang_chay)), h('div', { class: 'nhan' }, d.goi_thang + ' tháng · ' + d.goi_nam + ' năm')),
-      the('Sắp hết miễn phí', h('div', { class: 'so', style: sapHet.length ? 'color:var(--cam)' : '' }, String(sapHet.length)), h('div', { class: 'nhan' }, 'Còn ≤ 3 ngày → mời mua gói'))));
+      the('Sắp hết miễn phí', h('div', { class: 'so', style: sapHet.length ? 'color:var(--cam)' : '' }, String(sapHet.length)), h('div', { class: 'nhan' }, 'Còn ≤ 3 ngày → mời mua gói')),
+      the('⭐ Khách chấm cây', h('div', { class: 'so' }, d.so_danh_gia ? d.sao_tb + '★' : '—'), h('div', { class: 'nhan' }, (d.so_danh_gia || 0) + ' đánh giá (từ ngày 7)'))));
+    const sao = c => c.so_sao ? ' · ' + '★'.repeat(c.so_sao) + (c.gop_y ? ' “' + c.gop_y + '”' : '') : '';
     const nhanCb = c => !c.kich_hoat ? nhan('chưa kích hoạt', 'xam') : c.con_ngay === null ? nhan('đã kích hoạt', 'xanh')
       : c.con_ngay < 0 ? nhan('hết miễn phí ' + c.han, 'do') : c.con_ngay <= 3 ? nhan('còn ' + c.con_ngay + ' ngày', 'cam') : nhan('còn ' + c.con_ngay + ' ngày', 'xanh');
     // Giai đoạn 3 (20/11): tạo combo ngay trên bảng → lệnh tao_combo; mã kích hoạt + ảnh QR chỉ gửi về Telegram của anh
@@ -37,7 +39,7 @@ MAN.combo = {
       h('div', { class: 'nho', style: 'margin-top:6px' }, 'Chỉ nhập SĐT anh đã duyệt trước khi khách đặt đơn. Mã kích hoạt KHÔNG hiện trên trang này.')));
     el.append(h('div', { style: 'height:12px' }));
     el.append(the('Danh sách combo', d.combo.length ? d.combo.map(c => h('div', { class: 'dong' },
-      h('span', {}, h('b', {}, c.ma), ' · ', c.ten_cay, h('div', { class: 'nho' }, ['SĐT ' + c.sdt, 'tạo ' + c.tao, c.kich_hoat && 'kích hoạt ' + c.kich_hoat, c.goi].filter(Boolean).join(' · '))),
+      h('span', {}, h('b', {}, c.ma), ' · ', c.ten_cay, h('div', { class: 'nho' }, ['SĐT ' + c.sdt, 'tạo ' + c.tao, c.kich_hoat && 'kích hoạt ' + c.kich_hoat, c.kich_hoat && (c.cham_cuoi ? '💧 chăm ' + c.cham_cuoi : '💧 chưa ghi chăm'), c.goi].filter(Boolean).join(' · ') + sao(c))),
       nhanCb(c))) : trong('Chưa có combo nào.'),
       h('div', { class: 'nho', style: 'margin-top:6px' }, 'Vẫn tạo được bằng /combo trên Telegram. C001–C004 là dữ liệu thử, xóa trước khi bán thật.')));
     el.append(h('div', { style: 'height:12px' }));

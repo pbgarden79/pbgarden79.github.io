@@ -23,6 +23,12 @@ MAN.trang_chu = {
         h('div', { class: 'so', style: d.soLoi ? 'color:var(--do)' : '' }, String(d.soLoi)),
         h('div', { class: 'nhan' }, d.soLoi ? 'Xem chi tiết bên dưới' : 'Hệ thống chạy ổn'))));
 
+    // Giao cây theo thời tiết (duBaoGiao_ trong A2b_KhachHang.gs, dự báo MET Norway)
+    const g = d.giao;
+    if (g) el.append(the('🚚 Giao cây ' + g.ngayChu,
+      h('div', { class: 'so', style: 'font-size:20px;color:var(--' + ({ nen: 'xanh', can_than: 'cam', khong_nen: 'do' })[g.ket] + ')' }, g.tieuDe),
+      h('div', { class: 'nhan' }, g.chiTiet), h('div', { class: 'nho' }, 'Dự báo MET Norway (CC BY 4.0) · ' + g.luc)));
+
     const viec = d.viec.quaHan.map(r => [r, nhan('quá hạn ' + r.han, 'do')]).concat(d.viec.homNay.map(r => [r, nhan(r.gio || 'hôm nay', 'cam')]));
     el.append(h('div', { class: 'luoi2' },
       the('📋 Việc cần làm',
