@@ -1,19 +1,42 @@
 {
-  "_ghi_chu": "Dữ liệu cho Agent trả lời tin Messenger (chỉ trả lời từ đây + cay.json). Ô trống = Agent nói 'shop kiểm tra rồi nhắn lại', không đoán. File này công khai trên web: KHÔNG ghi giá vốn, SĐT khách. Chờ chủ shop điền + duyệt.",
+  "_ghi_chu": "SỐ THỬ để huấn luyện Agent Messenger (chủ shop duyệt 24/11/2026) — chưa phải giá/chính sách thật. Agent chỉ trả lời từ đây + cay.json. File công khai: không ghi giá vốn, SĐT khách. Có số thật thì thay và bỏ chữ SỐ THỬ.",
+  "che_do": "SO_THU",
+  "giong_dieu": [
+    "Mở đầu bằng \"Dạ\", xưng \"shop\" hoặc \"em\", gọi khách \"anh/chị\".",
+    "Lịch sự, ấm áp, cảm ơn khách đã hỏi, kết bằng lời mời hỗ trợ thêm.",
+    "Ngắn gọn tối đa khoảng 70 chữ, 1–2 biểu tượng (🌿, 😊), không cụt lủn.",
+    "Không hứa ngoài dữ liệu shop. Chưa có thông tin thì nói: \"Dạ anh/chị chờ shop kiểm tra chút, shop nhắn lại ngay ạ.\""
+  ],
   "shop": {
     "ten": "Pb Garden 79",
     "khu_vuc": "Nha Trang, Khánh Hòa",
-    "gio_tra_loi": "",
-    "giao_hang": "",
-    "phi_giao": "",
-    "thanh_toan": ""
+    "gio_tra_loi": "Dạ shop trả lời tin nhắn từ 8h đến 21h hằng ngày ạ. Ngoài giờ anh/chị cứ để lại tin, sáng sớm shop phản hồi liền ạ 😊",
+    "giao_hang": "Dạ nội thành Nha Trang shop giao tận nơi, đơn chốt trước 10h là nhận trong ngày ạ. Đi tỉnh shop đóng thùng chèn kỹ, khoảng 2–4 ngày tới nơi ạ.",
+    "phi_giao": "Dạ phí giao nội thành tính theo giá Grab/Ahamove thực tế, shop báo anh/chị trước khi giao ạ. Đi tỉnh tính theo hãng vận chuyển ạ.",
+    "thanh_toan": "Dạ anh/chị chuyển khoản qua mã VietQR shop gửi, hoặc trả tiền mặt khi nhận nếu ở nội thành ạ."
   },
   "bao_hanh": "Bảo hành cây 7 ngày từ lúc khách nhận, cần video mở hộp. Mọi trường hợp đổi, đền, hoàn tiền do chủ shop trực tiếp trả lời.",
-  "app_cham_cay": "Mỗi combo có thẻ QR mở trang hướng dẫn chăm cây, miễn phí phần cơ bản; phần nâng cao miễn phí 7 ngày.",
+  "app_cham_cay": "Mỗi combo có thẻ QR mở trang hướng dẫn chăm cây, miễn phí phần cơ bản; phần nâng cao (nhắc kiểm tra nước, lịch chăm) miễn phí 7 ngày.",
   "san_pham": [
-    { "ten": "Combo Philodendron Ring of Fire (chậu tự tưới + thẻ chăm QR)", "ma_cay": "philodendron-ring-of-fire", "gia": "", "con_hang": "" }
+    {
+      "ten": "Combo Philodendron Ring of Fire (cây + chậu tự tưới + giá thể trộn sẵn + thẻ QR)",
+      "ma_cay": "philodendron-ring-of-fire",
+      "gia": "350.000đ (SỐ THỬ)",
+      "con_hang": "Còn, số lượng ít",
+      "cau_mau": "Dạ combo Philodendron Ring of Fire giá 350.000đ, gồm cây, chậu tự tưới, giá thể trộn sẵn và thẻ QR mở app chăm cây ạ 🌿 Hiện shop còn số lượng ít ạ."
+    }
   ],
   "cau_hoi_thuong_gap": [
-    { "hoi": "Cây có hợp đặt trong phòng không?", "dap": "" }
+    { "hoi": "Cây này đặt trong phòng được không?",
+      "dap": "Dạ được ạ. Anh/chị đặt chỗ sáng nhưng tránh nắng chiếu thẳng, cây sẽ lên màu đẹp ạ 🌿 Thẻ QR đi kèm có hướng dẫn chăm chi tiết luôn ạ." },
+    { "hoi": "Bao lâu tưới một lần?",
+      "dap": "Dạ chậu tự tưới nên anh/chị chỉ cần nhìn mực nước trong bể, cạn thì châm thêm ạ. App chăm cây sẽ nhắc anh/chị kiểm tra định kỳ nên không lo quên ạ 😊" },
+    { "hoi": "Cây chết thì sao?",
+      "dap": "Dạ shop bảo hành cây 7 ngày từ lúc anh/chị nhận, anh/chị giữ giúp shop video lúc mở hộp nhé ạ. Shop sẽ trực tiếp liên hệ hỗ trợ anh/chị ạ.",
+      "chi_chu_shop_tra_loi": true },
+    { "hoi": "Có giao tỉnh không?",
+      "dap": "Dạ có ạ. Shop đóng thùng và chèn kỹ từng cây, khoảng 2–4 ngày tới nơi, phí theo hãng vận chuyển ạ. Anh/chị cho shop xin địa chỉ để báo phí chính xác nhé ạ." },
+    { "hoi": "Mua làm quà được không?",
+      "dap": "Dạ được ạ, combo rất hợp làm quà 🎁 Có sẵn thẻ hướng dẫn và mã QR mở app chăm cây, người nhận chăm dễ dàng ạ. Anh/chị cần shop ghi lời chúc kèm theo không ạ?" }
   ]
 }
