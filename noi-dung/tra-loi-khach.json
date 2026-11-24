@@ -1,0 +1,19 @@
+{
+  "_ghi_chu": "Dữ liệu cho Agent trả lời tin Messenger (chỉ trả lời từ đây + cay.json). Ô trống = Agent nói 'shop kiểm tra rồi nhắn lại', không đoán. File này công khai trên web: KHÔNG ghi giá vốn, SĐT khách. Chờ chủ shop điền + duyệt.",
+  "shop": {
+    "ten": "Pb Garden 79",
+    "khu_vuc": "Nha Trang, Khánh Hòa",
+    "gio_tra_loi": "",
+    "giao_hang": "",
+    "phi_giao": "",
+    "thanh_toan": ""
+  },
+  "bao_hanh": "Bảo hành cây 7 ngày từ lúc khách nhận, cần video mở hộp. Mọi trường hợp đổi, đền, hoàn tiền do chủ shop trực tiếp trả lời.",
+  "app_cham_cay": "Mỗi combo có thẻ QR mở trang hướng dẫn chăm cây, miễn phí phần cơ bản; phần nâng cao miễn phí 7 ngày.",
+  "san_pham": [
+    { "ten": "Combo Philodendron Ring of Fire (chậu tự tưới + thẻ chăm QR)", "ma_cay": "philodendron-ring-of-fire", "gia": "", "con_hang": "" }
+  ],
+  "cau_hoi_thuong_gap": [
+    { "hoi": "Cây có hợp đặt trong phòng không?", "dap": "" }
+  ]
+}

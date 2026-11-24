@@ -1,0 +1,18 @@
+{
+  "_ghi_chu": "Chăm sóc sau bán (duyệt hướng 23/11/2026, chữ chờ chủ shop duyệt). Mốc tính từ ngày khách kích hoạt combo. Không viết cách chăm ở đây: cách chăm luôn lấy từ cay.json (có nguồn).",
+  "moc": [
+    { "tu_ngay": 0, "den_ngay": 2, "tieu_de": "🌱 Mấy ngày đầu ở nhà mới",
+      "loi": "Cây vừa đổi chỗ ở. Anh/chị đọc lại phần cách chăm ở trên và đặt cây đúng chỗ giúp shop nhé.", "nut": "" },
+    { "tu_ngay": 3, "den_ngay": 6, "tieu_de": "👀 Ngày thứ {ngay} – cây có ổn không?",
+      "loi": "Lá vàng, rũ hay có đốm lạ thì chụp 3 ảnh gửi shop ngay. Cây vẫn đang trong 7 ngày bảo hành.", "nut": "kham" },
+    { "tu_ngay": 7, "den_ngay": 99999, "tieu_de": "⭐ Anh/chị chấm cây giúp shop",
+      "loi": "Đánh giá của anh/chị giúp shop chọn cây tốt hơn cho lần sau.", "nut": "danh_gia" }
+  ],
+  "danh_gia": {
+    "cam_on": "Cảm ơn anh/chị đã đánh giá! Shop đã nhận.",
+    "cam_on_thap": "Shop xin lỗi vì cây chưa như ý. Shop sẽ nhắn anh/chị để hỗ trợ sớm.",
+    "ghi_chu_goi_y": "Góp ý thêm (không bắt buộc)",
+    "luu_y": "Đánh giá gửi kèm mã cây để shop hỗ trợ bảo hành."
+  },
+  "di_kem_tieu_de": "🛒 Shop gợi ý dùng kèm"
+}
