@@ -26,17 +26,33 @@
       "cau_mau": "Dạ combo Philodendron Ring of Fire giá 350.000đ, gồm cây, chậu tự tưới, giá thể trộn sẵn và thẻ QR mở app chăm cây ạ 🌿 Hiện shop còn số lượng ít ạ."
     }
   ],
+  "tu_dong": {
+    "_ghi_chu": "Câu Supabase tự gửi NGAY khi khách nhắn (duyệt A + B 25/11/2026). da_nhan + da_nhan_khieu_nai: tối đa 1 lần/30 phút/khách. bat_cau_mau = true mới tự gửi câu mẫu khi khớp từ khóa (B) — mỗi nhóm trong tu_khoa phải có ít nhất 1 từ; khớp 0 hoặc từ 2 câu trở lên thì không tự gửi.",
+    "da_nhan": "Dạ shop đã nhận tin, shop trả lời anh/chị trong ít phút ạ 🌿",
+    "da_nhan_khieu_nai": "Dạ shop đã nhận tin của anh/chị, shop kiểm tra và liên hệ lại ngay ạ.",
+    "bat_cau_mau": false,
+    "cau_mau_shop": [
+      { "ten": "Giờ trả lời", "tu_khoa": [["mấy giờ", "giờ mở", "giờ làm", "online", "trả lời lúc"]],
+        "dap": "Dạ shop trả lời tin nhắn từ 8h đến 21h hằng ngày ạ. Ngoài giờ anh/chị cứ để lại tin, sáng sớm shop phản hồi liền ạ 😊" },
+      { "ten": "Thanh toán", "tu_khoa": [["thanh toán", "chuyển khoản", "trả tiền", "cod", "tiền mặt"]],
+        "dap": "Dạ anh/chị chuyển khoản qua mã VietQR shop gửi, hoặc trả tiền mặt khi nhận nếu ở nội thành ạ." },
+      { "ten": "Giá combo Ring of Fire", "tu_khoa": [["giá", "bao nhiêu", "nhiêu tiền"], ["ring of fire", "combo"]],
+        "dap": "Dạ combo Philodendron Ring of Fire giá 350.000đ, gồm cây, chậu tự tưới, giá thể trộn sẵn và thẻ QR mở app chăm cây ạ 🌿 Hiện shop còn số lượng ít ạ." },
+      { "ten": "Phí giao", "tu_khoa": [["phí ship", "tiền ship", "phí giao", "phí vận chuyển"]],
+        "dap": "Dạ phí giao nội thành tính theo giá Grab/Ahamove thực tế, shop báo anh/chị trước khi giao ạ. Đi tỉnh tính theo hãng vận chuyển ạ." }
+    ]
+  },
   "cau_hoi_thuong_gap": [
-    { "hoi": "Cây này đặt trong phòng được không?",
+    { "hoi": "Cây này đặt trong phòng được không?", "tu_khoa": [["trong phòng", "trong nhà", "văn phòng", "phòng ngủ"]],
       "dap": "Dạ được ạ. Anh/chị đặt chỗ sáng nhưng tránh nắng chiếu thẳng, cây sẽ lên màu đẹp ạ 🌿 Thẻ QR đi kèm có hướng dẫn chăm chi tiết luôn ạ." },
-    { "hoi": "Bao lâu tưới một lần?",
+    { "hoi": "Bao lâu tưới một lần?", "tu_khoa": [["tưới"]],
       "dap": "Dạ chậu tự tưới nên anh/chị chỉ cần nhìn mực nước trong bể, cạn thì châm thêm ạ. App chăm cây sẽ nhắc anh/chị kiểm tra định kỳ nên không lo quên ạ 😊" },
     { "hoi": "Cây chết thì sao?",
       "dap": "Dạ shop bảo hành cây 7 ngày từ lúc anh/chị nhận, anh/chị giữ giúp shop video lúc mở hộp nhé ạ. Shop sẽ trực tiếp liên hệ hỗ trợ anh/chị ạ.",
       "chi_chu_shop_tra_loi": true },
-    { "hoi": "Có giao tỉnh không?",
+    { "hoi": "Có giao tỉnh không?", "tu_khoa": [["tỉnh", "ngoại thành", "gửi xe"], ["giao", "ship", "gửi"]],
       "dap": "Dạ có ạ. Shop đóng thùng và chèn kỹ từng cây, khoảng 2–4 ngày tới nơi, phí theo hãng vận chuyển ạ. Anh/chị cho shop xin địa chỉ để báo phí chính xác nhé ạ." },
-    { "hoi": "Mua làm quà được không?",
+    { "hoi": "Mua làm quà được không?", "tu_khoa": [["quà", "tặng"]],
       "dap": "Dạ được ạ, combo rất hợp làm quà 🎁 Có sẵn thẻ hướng dẫn và mã QR mở app chăm cây, người nhận chăm dễ dàng ạ. Anh/chị cần shop ghi lời chúc kèm theo không ạ?" }
   ]
 }
