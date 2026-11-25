@@ -30,7 +30,7 @@
     "_ghi_chu": "Câu Supabase tự gửi NGAY khi khách nhắn (duyệt A + B 25/11/2026). da_nhan + da_nhan_khieu_nai: tối đa 1 lần/30 phút/khách. bat_cau_mau = true mới tự gửi câu mẫu khi khớp từ khóa (B) — mỗi nhóm trong tu_khoa phải có ít nhất 1 từ; khớp 0 hoặc từ 2 câu trở lên thì không tự gửi.",
     "da_nhan": "Dạ shop đã nhận tin, shop trả lời anh/chị trong ít phút ạ 🌿",
     "da_nhan_khieu_nai": "Dạ shop đã nhận tin của anh/chị, shop kiểm tra và liên hệ lại ngay ạ.",
-    "bat_cau_mau": false,
+    "bat_cau_mau": true,
     "cau_mau_shop": [
       { "ten": "Giờ trả lời", "tu_khoa": [["mấy giờ", "giờ mở", "giờ làm", "online", "trả lời lúc"]],
         "dap": "Dạ shop trả lời tin nhắn từ 8h đến 21h hằng ngày ạ. Ngoài giờ anh/chị cứ để lại tin, sáng sớm shop phản hồi liền ạ 😊" },
