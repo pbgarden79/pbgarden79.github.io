@@ -51,6 +51,7 @@ async function khoiDong() {
   const hienKichHoat = () => { vung.textContent = ''; vung.append(manHinhKichHoat(nd, han => {
     layVuon(true); // vừa kích hoạt → đọc lại vườn (bản cũ chưa có cây này)
     vung.textContent = ''; vung.append(h('p', { class: 'bao xanh' }, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(han) + '.'), manHinhSauBan(nd, ma), manHinhCham(nd, ma), manHinhNangCao(nd, ma, han));
+    vung.dispatchEvent(new Event('kich-hoat-xong'));
   })); };
 
   // Đã có phiên trên máy này → hỏi hạn dùng; chưa có → nút mở kích hoạt (chưa tạo phiên).
@@ -63,6 +64,11 @@ async function khoiDong() {
     h('h3', {}, '⭐ Phần nâng cao – miễn phí ' + nd.goi.mien_phi_ngay + ' ngày'),
     h('p', {}, 'Nhắc lịch kiểm tra nước, gửi ảnh nhờ shop khám bệnh, ưu đãi thành viên.'),
     h('button', { class: 'nut', onclick: hienKichHoat }, '🔓 Kích hoạt bằng mã trên thẻ')));
+  if (typeof manHinhVanDe === 'function') { // "Cây có vấn đề?" ngay dưới cách chăm (man-hinh/van-de.js); vừa kích hoạt xong thì hiện đủ
+    let vd = manHinhVanDe(nd, ma, !!(han && han >= homNay()));
+    vung.before(vd);
+    vung.addEventListener('kich-hoat-xong', () => { const moi = manHinhVanDe(nd, ma, true); vd.replaceWith(moi); vd = moi; });
+  }
 }
 
 khoiDong().catch(() => { document.getElementById('app').textContent = 'Không tải được trang. Anh/chị kiểm tra mạng rồi tải lại.'; });
