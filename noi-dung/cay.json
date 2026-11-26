@@ -1,5 +1,5 @@
 {
-  "_ghi_chu": "Cách chăm cơ bản theo loại cây. Sửa chữ ở đây, không cần đụng code. kiem_tra_ngay = chu kỳ nhắc kiểm tra nước (tạm 7, chờ số liệu thử combo). Mỗi loại cây BẮT BUỘC có mục nguon (nguồn uy tín) mới được đưa lên app. di_kem = gợi ý mua thêm (hiện từ ngày 7), chỉ hiện khi di_kem_duyet = true.",
+  "_ghi_chu": "Cách chăm cơ bản theo loại cây. Sửa chữ ở đây, không cần đụng code. kiem_tra_ngay = chu kỳ nhắc kiểm tra nước (tạm 7, chờ số liệu thử combo). Mỗi loại cây BẮT BUỘC có mục nguon (nguồn uy tín) mới được đưa lên app. di_kem = gợi ý mua thêm (hiện từ ngày 7), chỉ hiện khi di_kem_duyet = true. anh = ảnh minh họa tạm (Wikimedia Commons, giấy phép tự do — PHẢI ghi tác giả + giấy phép khi hiện); màn hình chưa hiện ảnh, thay bằng ảnh thật của shop khi có.",
   "philodendron-ring-of-fire": {
     "ten": "Philodendron Ring of Fire (cây đột biến)",
     "bieu_tuong": "🌿",
@@ -18,6 +18,145 @@
     "di_kem_duyet": true,
     "di_kem": [
       { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng 1–2 lần/tháng khi cây ra lá mới, như phần cách chăm ở trên." },
+      { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
+    ]
+  },
+  "philodendron-pink-princess": {
+    "ten": "Philodendron Pink Princess (Trầu bà đế vương hồng)",
+    "bieu_tuong": "🌸",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "☀️ Đặt chỗ sáng nhiều nhưng không bị nắng chiếu thẳng; phần lá hồng rất dễ cháy nắng",
+      "💧 Sờ mặt đất, khô khoảng 2–3 cm mới tưới; đừng để đất sũng nước",
+      "🌡️ Tránh để cây ngay chỗ gió máy lạnh thổi",
+      "🧪 Khi cây ra lá mới, bón phân cân đối 1–2 lần/tháng",
+      "🐾 Để xa tầm tay trẻ nhỏ và thú cưng (nhai lá sẽ ngứa, rát miệng)"
+    ],
+    "nguon": [
+      { "ten": "ĐH bang South Dakota (SDSU Extension)", "link": "https://extension.sdstate.edu/philodendron-houseplant-how" },
+      { "ten": "ĐH bang Iowa (ISU Extension)", "link": "https://yardandgarden.extension.iastate.edu/how-to/growing-philodendrons-home" }
+    ],
+    "anh": { "link": "https://commons.wikimedia.org/wiki/Special:FilePath/Pink_princess_philodendron.jpg?width=600", "tac_gia": "Cmushore", "giay_phep": "CC0", "trang": "https://commons.wikimedia.org/wiki/File:Pink_princess_philodendron.jpg" },
+    "trang_thai": "Chủ shop duyệt 26/11/2026",
+    "di_kem_duyet": false,
+    "di_kem": [
+      { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng 1–2 lần/tháng khi cây ra lá mới, như phần cách chăm ở trên." },
+      { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
+    ]
+  },
+  "philodendron-white-knight": {
+    "ten": "Philodendron White Knight (Trầu bà hiệp sĩ trắng)",
+    "bieu_tuong": "🤍",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "☀️ Đặt chỗ sáng nhiều nhưng không bị nắng chiếu thẳng; phần lá trắng rất dễ cháy nắng",
+      "💧 Sờ mặt đất, khô khoảng 2–3 cm mới tưới; đừng để đất sũng nước",
+      "🌡️ Tránh để cây ngay chỗ gió máy lạnh thổi",
+      "🧪 Khi cây ra lá mới, bón phân cân đối 1–2 lần/tháng",
+      "🐾 Để xa tầm tay trẻ nhỏ và thú cưng (nhai lá sẽ ngứa, rát miệng)"
+    ],
+    "nguon": [
+      { "ten": "ĐH bang South Dakota (SDSU Extension)", "link": "https://extension.sdstate.edu/philodendron-houseplant-how" },
+      { "ten": "ĐH bang Iowa (ISU Extension)", "link": "https://yardandgarden.extension.iastate.edu/how-to/growing-philodendrons-home" }
+    ],
+    "anh": { "link": "https://commons.wikimedia.org/wiki/Special:FilePath/Philodendron_White_Knight-1-NRI_Layout-bengaluru-India.jpg?width=600", "tac_gia": "Yercaud-elango", "giay_phep": "CC BY 4.0", "trang": "https://commons.wikimedia.org/wiki/File:Philodendron_White_Knight-1-NRI_Layout-bengaluru-India.jpg" },
+    "trang_thai": "Chủ shop duyệt 26/11/2026",
+    "di_kem_duyet": false,
+    "di_kem": [
+      { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng 1–2 lần/tháng khi cây ra lá mới, như phần cách chăm ở trên." },
+      { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
+    ]
+  },
+  "philodendron-paraiso-verde": {
+    "ten": "Philodendron Paraiso Verde (Trầu bà xanh loang)",
+    "bieu_tuong": "🍃",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "☀️ Đặt chỗ sáng dịu, tránh nắng chiếu thẳng; thiếu sáng cây chậm lớn",
+      "💧 Sờ mặt đất, khô khoảng 2–3 cm mới tưới; đừng để đất sũng nước",
+      "🌡️ Tránh để cây ngay chỗ gió máy lạnh thổi",
+      "🧪 Khi cây ra lá mới, bón phân cân đối 1–2 lần/tháng",
+      "🐾 Để xa tầm tay trẻ nhỏ và thú cưng (nhai lá sẽ ngứa, rát miệng)"
+    ],
+    "nguon": [
+      { "ten": "ĐH bang South Dakota (SDSU Extension)", "link": "https://extension.sdstate.edu/philodendron-houseplant-how" },
+      { "ten": "ĐH bang Iowa (ISU Extension)", "link": "https://yardandgarden.extension.iastate.edu/how-to/growing-philodendrons-home" }
+    ],
+    "trang_thai": "Chủ shop duyệt 26/11/2026",
+    "di_kem_duyet": false,
+    "di_kem": [
+      { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng 1–2 lần/tháng khi cây ra lá mới, như phần cách chăm ở trên." },
+      { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
+    ]
+  },
+  "philodendron-gloriosum": {
+    "ten": "Philodendron Gloriosum (Trầu bà nhung gân trắng)",
+    "bieu_tuong": "💚",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "🪴 Cây mọc bò ngang: chậu nên rộng, để phần thân bò trên mặt đất",
+      "☀️ Đặt chỗ sáng dịu, tránh nắng chiếu thẳng",
+      "💧 Sờ mặt đất, khô khoảng 2–3 cm mới tưới; đừng để đất sũng nước",
+      "💦 Lá nhung ưa ẩm, tránh để cây ngay chỗ gió máy lạnh thổi",
+      "🐾 Để xa tầm tay trẻ nhỏ và thú cưng"
+    ],
+    "nguon": [
+      { "ten": "ĐH bang South Dakota (SDSU Extension)", "link": "https://extension.sdstate.edu/philodendron-houseplant-how" },
+      { "ten": "ĐH bang Iowa (ISU Extension)", "link": "https://yardandgarden.extension.iastate.edu/how-to/growing-philodendrons-home" },
+      { "ten": "Hội Làm vườn Hoàng gia Anh (RHS)", "link": "https://www.rhs.org.uk/plants/philodendron" }
+    ],
+    "anh": { "link": "https://commons.wikimedia.org/wiki/Special:FilePath/Philodendron_gloriosum.jpg?width=600", "tac_gia": "Theoperatingsystem", "giay_phep": "CC BY-SA 4.0", "trang": "https://commons.wikimedia.org/wiki/File:Philodendron_gloriosum.jpg" },
+    "trang_thai": "Chủ shop duyệt 26/11/2026",
+    "di_kem_duyet": false,
+    "di_kem": [
+      { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng khi cây ra lá mới, bón nhẹ để lá nhung lên đẹp." },
+      { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
+    ]
+  },
+  "philodendron-mamei": {
+    "ten": "Philodendron Mamei (Trầu bà đốm bạc)",
+    "bieu_tuong": "🌱",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "🪴 Cây mọc bò ngang: chậu nên rộng, để phần thân bò trên mặt đất",
+      "☀️ Thích chỗ bóng râm, ánh sáng dịu",
+      "💧 Đợi mặt đất khô mới tưới, không để úng; mùa mát tưới ít hơn",
+      "🧤 Nhựa cây có thể làm ngứa da, khi cắt tỉa nên đeo găng; để xa tầm tay trẻ nhỏ và thú cưng"
+    ],
+    "nguon": [
+      { "ten": "Hội Làm vườn Hoàng gia Anh (RHS) – Philodendron mamei", "link": "https://www.rhs.org.uk/plants/12683/philodendron-mamei/details" },
+      { "ten": "ĐH bang South Dakota (SDSU Extension)", "link": "https://extension.sdstate.edu/philodendron-houseplant-how" }
+    ],
+    "anh": { "link": "https://commons.wikimedia.org/wiki/Special:FilePath/Philodendron_mamei_-_Copenhagen_Botanical_Garden_-_DSC07357.JPG?width=600", "tac_gia": "Daderot", "giay_phep": "CC0", "trang": "https://commons.wikimedia.org/wiki/File:Philodendron_mamei_-_Copenhagen_Botanical_Garden_-_DSC07357.JPG" },
+    "trang_thai": "Chủ shop duyệt 26/11/2026",
+    "di_kem_duyet": false,
+    "di_kem": [
+      { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng khi cây ra lá mới, bón nhẹ để cây khỏe lá." },
+      { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
+    ]
+  },
+  "monstera-albo": {
+    "ten": "Monstera Albo (Monstera cẩm thạch trắng)",
+    "bieu_tuong": "🪴",
+    "kiem_tra_ngay": 7,
+    "cham": [
+      "☀️ Đặt chỗ sáng dịu, tránh nắng gắt; phần lá trắng rất dễ cháy",
+      "💧 Tưới đẫm, đợi đất mặt khô khoảng 2–3 cm mới tưới lại; đất sũng nước dễ thối rễ",
+      "💦 Cây ưa ẩm; lá khô mép thường do không khí khô",
+      "🧪 Khi cây ra lá mới, bón phân cân đối 2–4 tuần/lần",
+      "🐾 Để xa tầm tay trẻ nhỏ và thú cưng; nhựa cây có thể làm ngứa da, khi cắt tỉa nên đeo găng"
+    ],
+    "nguon": [
+      { "ten": "ĐH bang Pennsylvania (Penn State Extension)", "link": "https://extension.psu.edu/monstera-as-a-houseplant" },
+      { "ten": "ĐH Wisconsin (UW–Madison Extension)", "link": "https://hort.extension.wisc.edu/articles/monstera-deliciosa/" },
+      { "ten": "ĐH bang Louisiana (LSU AgCenter)", "link": "https://www.lsuagcenter.com/articles/page1778771189620" }
+    ],
+    "anh": { "link": "https://commons.wikimedia.org/wiki/Special:FilePath/Fruit_Salad_Plant_(Monstera_deliciosa_%27Albo-Variegata%27).jpg?width=600", "tac_gia": "Mokkie", "giay_phep": "CC BY-SA 3.0", "trang": "https://commons.wikimedia.org/wiki/File:Fruit_Salad_Plant_(Monstera_deliciosa_%27Albo-Variegata%27).jpg" },
+    "trang_thai": "Chủ shop duyệt 26/11/2026",
+    "di_kem_duyet": false,
+    "di_kem": [
+      { "ten": "🧪 Phân bón cân đối cho cây lá", "vi_sao": "Dùng 2–4 tuần/lần khi cây ra lá mới, như phần cách chăm ở trên." },
+      { "ten": "🪵 Cọc dừa cho cây leo", "vi_sao": "Monstera là cây leo, có cọc để bám thì cây đứng vững, đẹp dáng." },
       { "ten": "🪴 Thêm một combo chậu tự tưới", "vi_sao": "Cùng kiểu chậu anh/chị đang dùng, đặt thêm một góc xanh." }
     ]
   }
