@@ -62,7 +62,8 @@ function manHinhCham(nd, ma) {
       lichCham(t)));
   };
   layVuon().then(ve);
-  return vung;
+  // Nhật ký ảnh (man-hinh/nhat-ky-anh.js) đi cùng Kiểm tra nước: cùng điều kiện còn hạn nâng cao/gói.
+  return typeof manHinhNhatKyAnh === 'function' ? h('div', {}, vung, manHinhNhatKyAnh(nd, ma)) : vung;
 }
 
 /** Lịch tháng: chấm xanh = ngày đã kiểm tra, viền = ngày đến hạn kế tiếp. Tuần bắt đầu thứ Hai. */
