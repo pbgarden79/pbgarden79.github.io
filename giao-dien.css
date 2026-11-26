@@ -67,4 +67,20 @@ ol.buoc-cai { margin: 6px 0 0; padding-left: 22px; font-size: 14px; line-height:
 .vd-chi-tiet:not(:empty) { margin-top: 8px; border-top: 1px solid var(--vien); }
 .vd-hoi { font-size: 14px; color: var(--xanh-dam); background: #f1f8ee; border-radius: 10px; padding: 8px 10px; margin-top: 12px; }
 .vd-khoa { background: #fdf0d8; color: #8a5a00; border-radius: 10px; padding: 8px 10px; }
+/* Nhật ký ảnh (man-hinh/nhat-ky-anh.js) */
+.nka-day { display: flex; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 0 8px; margin-top: 8px; }
+.nka-o { flex: none; width: 96px; scroll-snap-align: end; background: none; border: 0; padding: 0; font: inherit; color: var(--chu); text-align: center; cursor: pointer; }
+.nka-o img { display: block; width: 96px; height: 96px; object-fit: cover; border-radius: 10px; border: 1.5px solid var(--vien); background: #e5f4e4; }
+.nka-o span { display: block; font-size: 12px; font-weight: 600; margin-top: 3px; }
+.nka-o i { display: block; font-style: normal; font-size: 11px; color: var(--nhat); }
+.nka-so-sanh > div { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.nka-so-sanh figure { margin: 0; }
+.nka-so-sanh img { display: block; width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 10px; background: #e5f4e4; }
+.nka-so-sanh figcaption { font-size: 12px; color: var(--nhat); text-align: center; margin-top: 2px; }
+.nka-nhac { font-size: 14px; color: var(--xanh-dam); background: #f1f8ee; border-radius: 10px; padding: 8px 10px; }
+.nka-nhac.den { background: #fdf0d8; color: #8a5a00; }
+.nka-rieng { margin-top: 10px; }
+.nka-lop { position: fixed; inset: 0; background: rgba(0,0,0,.75); display: flex; align-items: center; justify-content: center; padding: 16px; z-index: 50; }
+.nka-hop { background: #fff; border-radius: 14px; padding: 12px; width: 100%; max-width: 520px; max-height: 100%; overflow: auto; }
+.nka-hop img { display: block; width: 100%; max-height: 62vh; object-fit: contain; border-radius: 10px; background: #000; }
 footer { font-size: 12px; color: #7a887c; text-align: center; padding: 0 16px 24px; }
