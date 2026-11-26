@@ -1,7 +1,30 @@
 {
-  "_ghi_chu": "Giá gói chủ shop chốt 19/11/2026. mien_phi_ngay = thời gian bảo hành.",
+  "_ghi_chu": "Giá gói chủ shop chốt 19/11/2026. mien_phi_ngay = thời gian bảo hành. Đổi giá phải sửa CẢ so_tien ở đây VÀ hàm gia_goi trong supabase/14_gia_han_goi.sql.",
   "mien_phi_ngay": 7,
-  "thang": { "ten": "Gói tháng", "gia": "29.000đ/tháng", "moi_ngay": "chỉ khoảng 0,97 nghìn/ngày" },
-  "nam": { "ten": "Gói năm", "gia": "249.000đ/năm", "moi_ngay": "chỉ khoảng 0,68 nghìn/ngày", "nhan": "Tiết kiệm nhất" },
-  "thanh_toan": "Chuyển khoản qua mã QR ngân hàng – đang hoàn thiện. Tạm thời nhắn shop để đăng ký."
+  "thang": { "ten": "Gói tháng", "gia": "29.000đ/tháng", "moi_ngay": "chỉ khoảng 0,97 nghìn/ngày", "so_tien": 29000 },
+  "nam": { "ten": "Gói năm", "gia": "249.000đ/năm", "moi_ngay": "chỉ khoảng 0,68 nghìn/ngày", "nhan": "Tiết kiệm nhất", "so_tien": 249000 },
+  "thanh_toan": "Dạ shop đang hoàn thiện thanh toán bằng mã QR. Anh/chị nhắn shop để đăng ký gói giúp shop nhé ạ.",
+
+  "_ghi_chu_chuyen_khoan": "ANH TỰ ĐIỀN 3 ô dưới (Claude không gõ số tài khoản). ngan_hang = mã ngân hàng theo VietQR, ví dụ VCB, MB, TCB, ACB, BIDV, ICB (VietinBank), VBA (Agribank), TPB, VPB… so_tai_khoan = chỉ chữ số. chu_tai_khoan = tên in hoa không dấu đúng như trên thẻ. Còn trống ô nào thì app tự hiện câu 'nhắn shop' như cũ. File này công khai trên GitHub — số tài khoản nhận tiền vốn để khách thấy nên không sao, nhưng KHÔNG ghi gì khác.",
+  "chuyen_khoan": {
+    "ngan_hang": "BIDV",
+    "so_tai_khoan": "8831963572",
+    "chu_tai_khoan": "NGUYEN NGOC DUY",
+    "mau_qr": "compact2"
+  },
+
+  "_ghi_chu_cau_chu": "Câu gửi khách ở màn Hết hạn — chủ shop DUYỆT nguyên văn 26/11/2026. {goi} {ma} {ngay} được thay tự động.",
+  "cau_chu": {
+    "chon_goi": "Dạ anh/chị bấm vào gói muốn dùng, shop hiện mã QR chuyển khoản ngay ạ.",
+    "huong_dan_ck": "Dạ anh/chị mở app ngân hàng, quét mã QR bên dưới. Số tiền và nội dung đã điền sẵn — anh/chị giữ nguyên nội dung giúp shop để shop nhận ra mình nhé ạ.",
+    "nut_da_ck": "✅ Tôi đã chuyển khoản",
+    "nut_doi_goi": "Chọn gói khác",
+    "da_bao": "Dạ shop đã nhận thông báo của anh/chị ạ. Shop kiểm tra tiền về rồi mở lại phần nâng cao ngay, thường trong ngày. Anh/chị cứ để trang này hoặc quay lại sau, trang tự cập nhật ạ.",
+    "dang_cho": "Dạ shop đang kiểm tra chuyển khoản {goi} của anh/chị (nội dung {ma}) ạ. Có kết quả là trang tự mở lại phần nâng cao.",
+    "nut_kiem_tra": "🔄 Kiểm tra lại",
+    "xong": "Dạ shop đã gia hạn xong, cảm ơn anh/chị đã tin dùng Pb Garden 79 ạ! Phần nâng cao dùng tới {ngay}.",
+    "tu_choi": "Dạ shop chưa thấy khoản chuyển cho nội dung {ma} ạ. Anh/chị nhắn shop giúp để shop kiểm tra lại nhé ạ.",
+    "qua_nhieu": "Dạ hôm nay anh/chị đã tạo nhiều yêu cầu rồi ạ, anh/chị nhắn shop để shop hỗ trợ nhé.",
+    "loi_mang": "Dạ trang chưa kết nối được, anh/chị kiểm tra mạng rồi thử lại giúp shop ạ."
+  }
 }
