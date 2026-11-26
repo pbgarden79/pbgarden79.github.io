@@ -1,0 +1,157 @@
+{
+  "_ghi_chu": "Mục 'Cây có vấn đề?' ở trang cây. mien_phi: true = ai quét QR cũng thấy (3 dấu hiệu hay gặp); còn lại chỉ hiện khi còn hạn nâng cao / gói. Mỗi dấu hiệu BẮT BUỘC có nguon (Extension trường ĐH / vườn thực vật). KHÔNG khuyên thuốc, thuốc tự pha. Câu chữ chủ shop duyệt.",
+  "cau_chu": {
+    "tieu_de": "🩺 Cây có vấn đề?",
+    "gioi_thieu": "Dạ anh/chị bấm vào dấu hiệu cây đang gặp, shop gợi ý nguyên nhân hay gặp và việc nên làm trước ạ.",
+    "nguyen_nhan": "Nguyên nhân hay gặp",
+    "nen_lam": "Việc nên làm",
+    "hoi_shop": "Dạ nếu làm theo khoảng 1 tuần mà cây chưa đỡ, anh/chị chụp ảnh cả cây, mặt dưới lá và mặt đất rồi gửi shop qua Messenger, shop xem và trả lời mình ạ.",
+    "khoa": "Dạ còn {n} dấu hiệu khác (lá nhỏ, rụng lá, thối gốc, côn trùng…) mở trong phần nâng cao 7 ngày hoặc gói thành viên ạ.",
+    "ghi_chu": "Đây là gợi ý chung theo tài liệu của các trường đại học. Shop không khuyên dùng thuốc tự pha; cây bệnh nặng anh/chị gửi ảnh để shop xem trực tiếp ạ."
+  },
+  "dau_hieu": [
+    {
+      "ma": "vang-la", "bieu_tuong": "🍂", "ten": "Vàng lá", "mien_phi": true,
+      "nguyen_nhan": [
+        "Tưới nhiều quá, đất lúc nào cũng ẩm (hay gặp nhất)",
+        "Thiếu sáng, hoặc lâu ngày chưa bón phân",
+        "Cây mới đổi chỗ (từ shop về nhà, dời góc khác) cần vài tuần làm quen",
+        "Chỉ vàng vài lá già phía dưới: thường do chậu đã chật, thiếu phân hoặc để đất khô quá lâu"
+      ],
+      "nen_lam": [
+        "Sờ đất sâu 2–3 cm: còn ẩm thì chưa tưới, chờ đất khô mới tưới lại",
+        "Chậu tự tưới: để bể nước cạn hẳn vài ngày rồi mới châm lại ạ",
+        "Đặt cây chỗ sáng hơn nhưng không bị nắng chiếu thẳng",
+        "Vàng kéo dài vài tuần: nhấc nhẹ cây xem rễ – rễ trắng là khỏe, rễ nâu đen mềm là bị úng (xem thêm mục Thối gốc)"
+      ],
+      "nguon": [
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" },
+        { "ten": "University of Illinois Extension", "link": "https://extension.illinois.edu/news-releases/keep-houseplants-happy-simple-solutions" }
+      ]
+    },
+    {
+      "ma": "ru-la", "bieu_tuong": "🥀", "ten": "Lá rũ, héo", "mien_phi": true,
+      "nguyen_nhan": [
+        "Đất khô quá lâu, cây thiếu nước",
+        "Ngược lại, tưới nhiều làm rễ thiếu không khí và bị úng – đất còn ướt mà cây vẫn rũ là dấu hiệu cần chú ý",
+        "Chậu đã chật, rễ kín chậu nên đất không giữ đủ nước"
+      ],
+      "nen_lam": [
+        "Đất khô: tưới đẫm đến khi nước chảy ra lỗ thoát, rồi theo dõi cây",
+        "Đất còn ướt mà cây vẫn rũ: ngưng tưới, kiểm tra lỗ thoát nước, nhấc cây xem rễ (xem mục Thối gốc)",
+        "Rễ kín chậu: cần thay chậu lớn hơn một cỡ – anh/chị nhắn shop hỗ trợ ạ"
+      ],
+      "nguon": [
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" }
+      ]
+    },
+    {
+      "ma": "chay-mep", "bieu_tuong": "🤎", "ten": "Mép, chóp lá cháy nâu", "mien_phi": true,
+      "nguyen_nhan": [
+        "Không khí nóng, khô; gió máy lạnh hoặc quạt thổi thẳng vào cây",
+        "Tưới thất thường, lúc khô kiệt lúc sũng nước",
+        "Muối từ phân bón, nước máy tích lại trong đất (lớp trắng xám trên mặt đất, viền chậu)",
+        "Một số cây nhạy với clo trong nước máy"
+      ],
+      "nen_lam": [
+        "Dời cây khỏi luồng gió máy lạnh, quạt",
+        "Tưới đều theo cách sờ đất 2–3 cm, không để khô kiệt rồi tưới dồn",
+        "Nước máy hứng ra để khoảng 24 giờ rồi mới tưới",
+        "Thỉnh thoảng tưới đẫm cho nước chảy qua chậu để rửa bớt muối; không bón phân quá liều; cạo lớp trắng trên mặt đất và bù đất mới"
+      ],
+      "nguon": [
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" },
+        { "ten": "University of Illinois Extension", "link": "https://extension.illinois.edu/news-releases/keep-houseplants-happy-simple-solutions" }
+      ]
+    },
+    {
+      "ma": "la-nho", "bieu_tuong": "🌱", "ten": "Lá nhỏ, nhạt màu, thân vươn dài", "mien_phi": false,
+      "nguyen_nhan": [
+        "Thiếu sáng – cây vươn dài để tìm ánh sáng",
+        "Lâu ngày chưa bón phân"
+      ],
+      "nen_lam": [
+        "Dời cây đến chỗ sáng hơn (gần cửa sổ) nhưng không bị nắng gắt chiếu thẳng",
+        "Thỉnh thoảng xoay chậu để cây mọc đều các phía",
+        "Khi cây ra lá mới, bón phân cân đối 1–2 lần/tháng như hướng dẫn chăm"
+      ],
+      "nguon": [
+        { "ten": "University of Illinois Extension", "link": "https://extension.illinois.edu/news-releases/keep-houseplants-happy-simple-solutions" },
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" }
+      ]
+    },
+    {
+      "ma": "dom-la", "bieu_tuong": "☀️", "ten": "Lá có đốm, mảng cháy bạc màu", "mien_phi": false,
+      "nguyen_nhan": [
+        "Nắng chiếu thẳng quá nhiều (lá màu hồng, trắng càng dễ cháy)",
+        "Dời cây từ chỗ râm ra chỗ nắng đột ngột",
+        "Nấm gây đốm lá, nhất là khi lá ướt lâu, chỗ để bí gió"
+      ],
+      "nen_lam": [
+        "Dời cây đến chỗ ít nắng hơn; muốn đổi chỗ thì đổi từ từ",
+        "Tưới vào gốc, không để lá ướt lâu; để cây chỗ thoáng",
+        "Cắt bỏ những lá bị đốm nặng",
+        "Đốm lan nhanh sang lá khác: anh/chị gửi ảnh cho shop xem ngay ạ"
+      ],
+      "nguon": [
+        { "ten": "University of Illinois Extension", "link": "https://extension.illinois.edu/news-releases/keep-houseplants-happy-simple-solutions" },
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" }
+      ]
+    },
+    {
+      "ma": "rung-la", "bieu_tuong": "🍃", "ten": "Rụng lá", "mien_phi": false,
+      "nguyen_nhan": [
+        "Cây mới đổi môi trường (mới mang về, dời chỗ) – thường chỉ kéo dài khoảng 3 tuần",
+        "Tưới nhiều quá hoặc ít quá",
+        "Chậu đã chật",
+        "Bị lạnh, ví dụ để sát máy lạnh"
+      ],
+      "nen_lam": [
+        "Để cây một chỗ cố định, đừng dời liên tục",
+        "Tưới theo cách sờ đất 2–3 cm",
+        "Tránh để cây chỗ gió máy lạnh thổi",
+        "Rụng lá kéo dài quá 3 tuần: anh/chị gửi ảnh cho shop xem ạ"
+      ],
+      "nguon": [
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" }
+      ]
+    },
+    {
+      "ma": "thoi-goc", "bieu_tuong": "🟤", "ten": "Gốc mềm, thối, đất úng", "mien_phi": false,
+      "nguyen_nhan": [
+        "Đất sũng nước lâu ngày, chậu thoát nước kém → rễ thiếu không khí, nấm trong đất làm thối rễ, thối gốc",
+        "Dấu hiệu: cây rũ dù đất ướt, gốc thân có vòng nâu đen, rễ nâu đen và mềm"
+      ],
+      "nen_lam": [
+        "Ngưng tưới ngay; đổ nước đọng ở đĩa lót, chậu tự tưới thì để bể cạn",
+        "Không để chậu đứng trong đĩa đầy nước",
+        "Nhấc cây xem rễ: chỉ vài rễ hư thì cắt bỏ phần hư, trồng lại bằng đất mới, sạch",
+        "Rễ hư nhiều hoặc gốc thân đã mềm: anh/chị gửi ảnh cho shop ngay để shop xem còn cứu được không ạ"
+      ],
+      "nguon": [
+        { "ten": "Clemson University Extension (HGIC 2251)", "link": "https://hgic.clemson.edu/factsheet/houseplant-diseases-disorders/" }
+      ]
+    },
+    {
+      "ma": "con-trung", "bieu_tuong": "🐛", "ten": "Có côn trùng", "mien_phi": false,
+      "nguyen_nhan": [
+        "Cụm bông trắng ở nách lá, mặt dưới lá: rệp sáp",
+        "Chấm li ti màu nhạt trên lá, có tơ mảnh như mạng nhện: nhện đỏ (hay gặp khi không khí khô)",
+        "Vảy nhỏ bám chặt trên thân, lá: rệp vảy",
+        "Ruồi nhỏ bay quanh mặt đất: ruồi nấm, do đất ẩm lâu",
+        "Lá dính, bóng: dịch do rệp tiết ra"
+      ],
+      "nen_lam": [
+        "Tách cây ra xa các chậu khác để không lây",
+        "Ít con: bắt bằng tay, lau cả hai mặt lá bằng khăn ẩm; cây cứng cáp có thể xịt nước rửa lá",
+        "Ruồi nấm: để đất khô bớt giữa các lần tưới, không để nước đọng ở đĩa lót",
+        "Phải làm lại nhiều lần trong vài tuần mới sạch hẳn",
+        "Nhiều quá: anh/chị chụp mặt dưới lá gửi shop xem, đừng tự pha thuốc xịt ạ"
+      ],
+      "nguon": [
+        { "ten": "Clemson University Extension (HGIC 2252)", "link": "https://hgic.clemson.edu/factsheet/common-houseplant-insects-related-pests/" },
+        { "ten": "University of Illinois Extension", "link": "https://extension.illinois.edu/news-releases/keep-houseplants-happy-simple-solutions" }
+      ]
+    }
+  ]
+}
