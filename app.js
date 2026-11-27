@@ -56,12 +56,19 @@ async function khoiDong() {
   veTrangCu(goc, nd, ma, han);
 }
 
+/** Lời chào sau khi kích hoạt (kèm hạn) hoặc khôi phục trên máy này (hạn giữ nguyên, supabase/16). */
+function loiChaoKichHoat(nd, han, khoiPhuc) {
+  return khoiPhuc && nd.loiNhan.khoi_phuc_xong ? nd.loiNhan.khoi_phuc_xong : nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(han) + '.';
+}
+
 /** Máy ĐÃ kích hoạt: khung 4 tab (khung-tab.js). Các tab chưa có màn mới thì dùng tạm màn đang có (bước 2–4 sẽ làm lại). */
 function veTrangTab(goc, nd, ma, han, loiChao) {
   const conHan = han >= homNay();
   const t = khungTab(goc).vung;
-  const daKichHoat = hanMoi => { layVuon(true); veTrangTab(goc, nd, ma, hanMoi, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(hanMoi) + '.'); };
+  const daKichHoat = (hanMoi, khoiPhuc) => { layVuon(true); veTrangTab(goc, nd, ma, hanMoi, loiChaoKichHoat(nd, hanMoi, khoiPhuc)); };
   if (loiChao) t['hom-nay'].append(h('p', { class: 'bao xanh' }, loiChao));
+  // Gợi ý cài app ra màn hình chính (ít bị mất phiên): chỉ khi thẻ "Cài app" của cai-app.js đang hiện cuối trang
+  if (loiChao && nd.loiNhan.goi_y_cai_app && document.querySelector('.cai-app')) t['hom-nay'].append(h('p', { class: 'bao xanh' }, nd.loiNhan.goi_y_cai_app));
 
   // HÔM NAY (tạm: trang cây như cũ; trang chủ: vườn + nhập mã)
   if (ma) {
@@ -108,10 +115,10 @@ function veTrangCu(goc, nd, ma, han) {
   const vung = h('div', {});
   goc.append(vung);
 
-  const hienKichHoat = () => { vung.textContent = ''; vung.append(manHinhKichHoat(nd, hanMoi => {
+  const hienKichHoat = () => { vung.textContent = ''; vung.append(manHinhKichHoat(nd, (hanMoi, khoiPhuc) => {
     layVuon(true); // vừa kích hoạt → đọc lại vườn (bản cũ chưa có cây này)
-    if (typeof khungTab === 'function') return veTrangTab(goc, nd, ma, hanMoi, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(hanMoi) + '.');
-    vung.textContent = ''; vung.append(h('p', { class: 'bao xanh' }, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(hanMoi) + '.'), manHinhSauBan(nd, ma), manHinhCham(nd, ma), manHinhNangCao(nd, ma, hanMoi));
+    if (typeof khungTab === 'function') return veTrangTab(goc, nd, ma, hanMoi, loiChaoKichHoat(nd, hanMoi, khoiPhuc));
+    vung.textContent = ''; vung.append(h('p', { class: 'bao xanh' }, loiChaoKichHoat(nd, hanMoi, khoiPhuc)), manHinhSauBan(nd, ma), manHinhCham(nd, ma), manHinhNangCao(nd, ma, hanMoi));
     vung.dispatchEvent(new Event('kich-hoat-xong'));
   })); };
 
