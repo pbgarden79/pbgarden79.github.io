@@ -9,7 +9,11 @@ function chuShopLoi(loi) {
 }
 
 const _diaChiKhongChu = () => { const u = new URL(location.href); u.searchParams.delete('chu'); return u.pathname + u.search + u.hash; };
-const _taiLai = url => location.replace(url || _diaChiKhongChu());
+// Cùng địa chỉ (vd đang ở #hom-nay của khung tab) thì replace chỉ nhảy trong trang, không tải lại → phải reload.
+const _taiLai = url => {
+  const dich = url || _diaChiKhongChu();
+  if (dich === location.pathname + location.search + location.hash) location.reload(); else location.replace(dich);
+};
 
 function _xemKhach(bat) {
   try { bat ? sessionStorage.setItem(XEM_KHACH_KHOA, '1') : sessionStorage.removeItem(XEM_KHACH_KHOA); } catch (e) { /* bỏ qua */ }
