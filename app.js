@@ -89,8 +89,11 @@ function veTrangTab(goc, nd, ma, han, loiChao) {
   // VƯỜN (man-hinh/vuon-luoi.js: lưới thẻ cây + Chi tiết cây, cần hom-nay.js; thiếu file thì dùng kệ cũ ở vuon.js)
   t.vuon.append(typeof manHinhVuonLuoi === 'function' && typeof hnTrangThai === 'function' ? manHinhVuonLuoi(nd, ma, conHan) : manHinhVuon(nd, ma));
 
-  // CÂY CÓ VẤN ĐỀ? (man-hinh/van-de.js cần biết cây nào → trang chủ thì nhắc chọn cây trong vườn)
-  if (ma && typeof manHinhVanDe === 'function') t['van-de'].append(manHinhVanDe(nd, ma, conHan));
+  // CÂY CÓ VẤN ĐỀ? (bước 4: man-hinh/van-de-tab.js chọn cây → lưới dấu hiệu → kết quả; cần vuon-luoi.js + hom-nay.js.
+  // Thiếu file thì dùng màn cũ van-de.js: cần biết cây nào → trang chủ thì nhắc chọn cây trong vườn)
+  if (typeof manHinhVanDeTab === 'function' && typeof vlAnhNho === 'function' && typeof hnTrangThai === 'function')
+    t['van-de'].append(manHinhVanDeTab(nd, ma, conHan));
+  else if (ma && typeof manHinhVanDe === 'function') t['van-de'].append(manHinhVanDe(nd, ma, conHan));
   else t['van-de'].append(h('section', { class: 'the' }, h('h3', {}, '🩺 Cây có vấn đề?'),
     h('p', { class: 'nho' }, 'Dạ anh/chị chọn cây đang gặp vấn đề trong vườn bên dưới để xem dấu hiệu và cách xử lý ạ.')), manHinhVuon(nd, ''));
 
