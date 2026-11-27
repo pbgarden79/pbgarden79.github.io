@@ -24,6 +24,8 @@ function luuPhien(d, chu) {
     het_luc: d.expires_at ? d.expires_at * 1000 : Date.now() + (d.expires_in || 3600) * 1000 };
   if (chu) p.chu = true;
   try { localStorage.setItem(PHIEN_KHOA, JSON.stringify(p)); } catch (e) { /* trình duyệt chặn lưu → dùng trong lúc mở trang */ }
+  // 27/11: xin trình duyệt giữ bộ nhớ lâu dài (bớt bị Safari tự xóa phiên). Không hỏi khách, máy không hỗ trợ thì bỏ qua.
+  try { if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {}); } catch (e) { /* bỏ qua */ }
   return p;
 }
 
