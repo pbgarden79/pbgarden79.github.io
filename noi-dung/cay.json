@@ -1,5 +1,5 @@
 {
-  "_ghi_chu": "Cách chăm cơ bản theo loại cây. Sửa chữ ở đây, không cần đụng code. kiem_tra_ngay = chu kỳ nhắc kiểm tra nước (tạm 7, chờ số liệu thử combo). Mỗi loại cây BẮT BUỘC có mục nguon (nguồn uy tín) mới được đưa lên app. di_kem = gợi ý mua thêm (hiện từ ngày 7), chỉ hiện khi di_kem_duyet = true. anh = ảnh minh họa tạm (Wikimedia Commons, giấy phép tự do — PHẢI ghi tác giả + giấy phép khi hiện); màn hình chưa hiện ảnh, thay bằng ảnh thật của shop khi có.",
+  "_ghi_chu": "Cách chăm cơ bản theo loại cây. Sửa chữ ở đây, không cần đụng code. kiem_tra_ngay = chu kỳ nhắc kiểm tra nước (tạm 7, chờ số liệu thử combo). Mỗi loại cây BẮT BUỘC có mục nguon (nguồn uy tín) mới được đưa lên app. di_kem = gợi ý mua thêm (hiện từ ngày 7), chỉ hiện khi di_kem_duyet = true. anh = ảnh minh họa tạm (Wikimedia Commons, giấy phép tự do — PHẢI ghi tác giả + giấy phép khi hiện); ảnh hiện ở trang cây + tab Vườn (thẻ cây, chi tiết cây); thay bằng ảnh thật của shop khi có. Ring of Fire thêm ảnh 27/11; Paraiso Verde chưa có ảnh tự do trên Wikimedia (hiện biểu tượng).",
   "philodendron-ring-of-fire": {
     "ten": "Philodendron Ring of Fire (cây đột biến)",
     "bieu_tuong": "🌿",
@@ -14,6 +14,7 @@
       { "ten": "ĐH bang South Dakota (SDSU Extension)", "link": "https://extension.sdstate.edu/philodendron-houseplant-how" },
       { "ten": "ĐH bang Iowa (ISU Extension)", "link": "https://yardandgarden.extension.iastate.edu/how-to/growing-philodendrons-home" }
     ],
+    "anh": { "link": "https://commons.wikimedia.org/wiki/Special:FilePath/Philodendron_Ring_Of_Fire-1-NRI_Layout-bengaluru-India.jpg?width=600", "tac_gia": "Yercaud-elango", "giay_phep": "CC BY 4.0", "trang": "https://commons.wikimedia.org/wiki/File:Philodendron_Ring_Of_Fire-1-NRI_Layout-bengaluru-India.jpg" },
     "trang_thai": "Chủ shop duyệt 19/11/2026",
     "di_kem_duyet": true,
     "di_kem": [
