@@ -7,7 +7,17 @@
     "nen_lam": "Việc nên làm",
     "hoi_shop": "Dạ nếu làm theo khoảng 1 tuần mà cây chưa đỡ, anh/chị chụp ảnh cả cây, mặt dưới lá và mặt đất rồi gửi shop qua Messenger, shop xem và trả lời mình ạ.",
     "khoa": "Dạ còn {n} dấu hiệu khác (lá nhỏ, rụng lá, thối gốc, côn trùng…) mở trong phần nâng cao 7 ngày hoặc gói thành viên ạ.",
-    "ghi_chu": "Đây là gợi ý chung theo tài liệu của các trường đại học. Shop không khuyên dùng thuốc tự pha; cây bệnh nặng anh/chị gửi ảnh để shop xem trực tiếp ạ."
+    "ghi_chu": "Đây là gợi ý chung theo tài liệu của các trường đại học. Shop không khuyên dùng thuốc tự pha; cây bệnh nặng anh/chị gửi ảnh để shop xem trực tiếp ạ.",
+    "tab": {
+      "_ghi_chu": "Chữ riêng của tab 'Cây có vấn đề?' (man-hinh/van-de-tab.js, bước 4). Anh DUYỆT nguyên văn 27/11/2026.",
+      "buoc_cay": "1. Cây nào đang có vấn đề ạ?",
+      "buoc_cay_nho": "Dạ anh/chị bấm chọn cây trong vườn bên dưới ạ.",
+      "buoc_dau_hieu": "2. Cây đang có dấu hiệu gì ạ?",
+      "quay_lai": "‹ Chọn dấu hiệu khác",
+      "khoa_nho": "Mở khi gia hạn",
+      "gia_han": "Xem cách gia hạn",
+      "vuon_trong": "Dạ vườn mình chưa có cây nào ạ. Anh/chị quét mã QR trên thẻ chăm để thêm cây, hoặc nhắn shop giúp mình nha."
+    }
   },
   "dau_hieu": [
     {
