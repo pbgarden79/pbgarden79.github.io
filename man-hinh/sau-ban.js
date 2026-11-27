@@ -42,6 +42,7 @@ function oDanhGia(chu, ma, d) {
     nut.disabled = true; bao.className = 'bao'; bao.textContent = '';
     const r = await goiHam('gui_danh_gia', { p_ma: ma, p_sao: sao, p_ghi_chu: gc.value.trim() }, false);
     nut.disabled = false;
+    if (r.ok && r.data && r.data.chu_shop) { bao.className = 'bao xanh'; bao.textContent = '👑 Chế độ chủ shop: bấm thử, không ghi đè đánh giá của khách.'; return; }
     if (r.ok && r.data && r.data.ok) { bao.className = 'bao xanh'; bao.textContent = sao <= 3 ? chu.cam_on_thap : chu.cam_on; nut.textContent = 'Sửa đánh giá'; }
     else bao.textContent = 'Chưa gửi được, anh/chị thử lại sau ít phút.';
   };

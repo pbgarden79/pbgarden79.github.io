@@ -49,6 +49,7 @@ function manHinhCham(nd, ma) {
     nut.onclick = async () => {
       nut.disabled = true;
       const r = await goiHam('ghi_cham', { p_ma: ma }, false);
+      if (r.ok && r.data && r.data.chu_shop) { bao.className = 'bao xanh'; bao.textContent = '👑 Chế độ chủ shop: bấm thử, không ghi vào nhật ký của khách.'; return; }
       if (r.ok && r.data && r.data.ok) ve(await layVuon(true));
       else { nut.disabled = false; bao.textContent = 'Chưa ghi được, anh/chị thử lại sau ít phút.'; }
     };

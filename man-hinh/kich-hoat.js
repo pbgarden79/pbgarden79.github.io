@@ -18,7 +18,7 @@ function manHinhKichHoat(nd, khiXong) {
     nut.disabled = false; nut.textContent = 'Mở phần nâng cao';
     const d = r.data || {};
     if (r.ok && d.ok) return khiXong(d.han);
-    bao.textContent = nd.loiNhan[d.loi] || nd.loiNhan.loi_mang;
+    bao.textContent = nd.loiNhan[d.loi] || (typeof chuShopLoi === 'function' && chuShopLoi(d.loi)) || nd.loiNhan.loi_mang;
   };
 
   return h('section', { class: 'the' },
