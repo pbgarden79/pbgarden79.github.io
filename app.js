@@ -43,6 +43,7 @@ async function khoiDong() {
   if (ma && !nd.combo[ma]) { // combo mới tạo từ Telegram: hỏi Supabase mã này là cây gì (chỉ loại cây + gói, không dữ liệu khách)
     const r = await sbFetch('/rest/v1/rpc/combo_cong_khai', { method: 'POST', body: { p_ma: ma } });
     if (r.ok && r.data && r.data.cay) nd.combo[ma] = { cay: r.data.cay, goi: r.data.goi || '', chau: '', gia_the: '' };
+    else if (!r.ok && (r.status === 0 || r.status >= 500)) throw new Error('supabase combo_cong_khai ' + r.status); // máy chủ hỏng ≠ mã sai → màn dự phòng
   }
   if (ma && (!nd.combo[ma] || !nd.cay[nd.combo[ma].cay])) {
     goc.textContent = '';
@@ -54,6 +55,8 @@ async function khoiDong() {
   const han = r && r.ok ? r.data : null;
   if (han && typeof khungTab === 'function') return veTrangTab(goc, nd, ma, han);
   veTrangCu(goc, nd, ma, han);
+  // Supabase chậm/hỏng khi hỏi hạn dùng → vẫn hiện trang cũ, kèm 1 dòng báo phần nâng cao tạm chưa hiện (Dự phòng 2)
+  if (r && !r.ok && (r.status === 0 || r.status >= 500) && nd.loiNhan.he_thong_cham) goc.prepend(h('p', { class: 'bao' }, nd.loiNhan.he_thong_cham));
 }
 
 /** Lời chào sau khi kích hoạt (kèm hạn) hoặc khôi phục trên máy này (hạn giữ nguyên, supabase/16). */
@@ -144,4 +147,8 @@ function veTrangCu(goc, nd, ma, han) {
   }
 }
 
-khoiDong().catch(() => { document.getElementById('app').textContent = 'Không tải được trang. Anh/chị kiểm tra mạng rồi tải lại.'; });
+// Dự phòng 2 (27/11): xong → báo bao-loi.js trang đã hiện; hỏng → màn dự phòng (cách chăm cơ bản / Hỏi shop / Tải lại) + báo lỗi về shop
+khoiDong().then(() => { if (window.pbDaVe) pbDaVe(); }, e => {
+  if (window.pbDuPhong) return pbDuPhong('khoi_dong', e && (e.message || String(e)));
+  document.getElementById('app').textContent = 'Không tải được trang. Anh/chị kiểm tra mạng rồi tải lại.';
+});
