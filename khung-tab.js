@@ -38,7 +38,9 @@ function khungTab(goc) {
     if (dang) scrollTo(0, 0);
     dang = id;
   };
-  window.onhashchange = () => chon(location.hash.slice(1));
-  chon(location.hash.slice(1));
+  // #vuon/C001 = tab Vườn, mở chi tiết cây C001 (man-hinh/vuon-luoi.js) → chỉ lấy phần trước dấu "/"
+  const tabTuDiaChi = () => location.hash.slice(1).split('/')[0];
+  window.onhashchange = () => chon(tabTuDiaChi());
+  chon(tabTuDiaChi());
   return { vung, chon };
 }

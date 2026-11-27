@@ -83,8 +83,8 @@ function veTrangTab(goc, nd, ma, han, loiChao) {
     else t['hom-nay'].append(manHinhCoBan(nd, ma), phan);
   } else if (!coHomNay) t['hom-nay'].append(manHinhVuon(nd, ''), theNhapMa(nd));
 
-  // VƯỜN (tạm: kệ "Vườn của tôi" ở man-hinh/vuon.js)
-  t.vuon.append(manHinhVuon(nd, ma));
+  // VƯỜN (man-hinh/vuon-luoi.js: lưới thẻ cây + Chi tiết cây, cần hom-nay.js; thiếu file thì dùng kệ cũ ở vuon.js)
+  t.vuon.append(typeof manHinhVuonLuoi === 'function' && typeof hnTrangThai === 'function' ? manHinhVuonLuoi(nd, ma, conHan) : manHinhVuon(nd, ma));
 
   // CÂY CÓ VẤN ĐỀ? (man-hinh/van-de.js cần biết cây nào → trang chủ thì nhắc chọn cây trong vườn)
   if (ma && typeof manHinhVanDe === 'function') t['van-de'].append(manHinhVanDe(nd, ma, conHan));
