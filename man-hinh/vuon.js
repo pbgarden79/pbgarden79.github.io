@@ -51,7 +51,7 @@ function manHinhCham(nd, ma) {
       nut.disabled = true;
       const r = await goiHam('ghi_cham', { p_ma: ma }, false);
       if (r.ok && r.data && r.data.chu_shop) { bao.className = 'bao xanh'; bao.textContent = '👑 Chế độ chủ shop: bấm thử, không ghi vào nhật ký của khách.'; return; }
-      if (r.ok && r.data && r.data.ok) ve(await layVuon(true));
+      if (r.ok && r.data && r.data.ok) { ve(await layVuon(true)); document.dispatchEvent(new Event('vuon-doi')); } // màn Hôm nay vẽ lại
       else { nut.disabled = false; bao.textContent = 'Chưa ghi được, anh/chị thử lại sau ít phút.'; }
     };
     vung.append(h('section', { class: 'the' },
@@ -64,6 +64,7 @@ function manHinhCham(nd, ma) {
       lichCham(t)));
   };
   layVuon().then(ve);
+  document.addEventListener('vuon-doi', () => { if (vung.isConnected) layVuon().then(ve); }); // bấm ở màn Hôm nay → cập nhật
   // Nhật ký ảnh (man-hinh/nhat-ky-anh.js) đi cùng Kiểm tra nước: cùng điều kiện còn hạn nâng cao/gói.
   return typeof manHinhNhatKyAnh === 'function' ? h('div', {}, vung, manHinhNhatKyAnh(nd, ma)) : vung;
 }
