@@ -15,6 +15,9 @@ function xemNhuKhach() {
 
 function docPhien() { return xemNhuKhach() ? null : docPhienGoc(); }
 
+/** Mã ảo "XEM-<loại cây>": chủ shop xem thử 1 loại cây chưa có combo (app.js tạo từ /?cay=…, chỉ khi có phiên chủ). */
+function laMaXem(ma) { return typeof ma === 'string' && ma.startsWith('XEM-'); }
+
 function luuPhien(d, chu) {
   if (!d || !d.access_token) return null;
   const p = { access_token: d.access_token, refresh_token: d.refresh_token,

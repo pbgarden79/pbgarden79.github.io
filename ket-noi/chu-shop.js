@@ -31,6 +31,22 @@ function _thanhChu() {
     xem ? h('button', { type: 'button', onclick: () => _xemKhach(false) }, 'Về chế độ chủ shop')
         : h('button', { type: 'button', onclick: () => _xemKhach(true) }, 'Xem như khách mới'),
     h('button', { type: 'button', onclick: _dangXuatChu }, 'Đăng xuất'));
+  // "🌿 Các loại cây": mở trang đầy đủ của từng loại cây đang bán (kể cả loại chưa có combo) → /?cay=<mã loại> (app.js tạo mã ảo XEM-…)
+  const ds = h('div', { class: 'ds-cay-chu', hidden: '' });
+  const nutCay = h('button', { type: 'button', 'aria-expanded': 'false' }, '🌿 Các loại cây');
+  nutCay.onclick = async () => {
+    const mo = ds.hidden;
+    ds.hidden = !mo; nutCay.setAttribute('aria-expanded', String(mo));
+    if (!mo || ds.childElementCount) return;
+    try {
+      const cay = await fetch('/noi-dung/cay.json', { cache: 'no-cache' }).then(r => r.json());
+      const dang = new URLSearchParams(location.search).get('cay');
+      ds.append(...Object.entries(cay).filter(([, c]) => c && c.ten).map(([k, c]) =>
+        h('a', { href: '/?cay=' + encodeURIComponent(k), class: k === dang ? 'dang' : '' }, (c.bieu_tuong || '🌿') + ' ' + c.ten.replace(/\s*\(.*\)$/, ''))));
+    } catch (e) { ds.append(h('span', {}, 'Chưa tải được danh sách, thử lại.')); }
+  };
+  thanh.insertBefore(nutCay, thanh.children[1]);
+  thanh.append(ds);
   document.querySelector('header').after(thanh);
 }
 
@@ -97,6 +113,9 @@ function _manDangNhapChu() {
     + 'background:#fff8e1;border:1px solid #f0d58a;border-radius:12px;font-size:13px;color:#6b4e00}'
     + '.thanh-chu span{flex:1 1 auto;font-weight:700}.thanh-chu.xem{background:#e8f1fb;border-color:#b5cdea;color:#1f4a78}'
     + '.thanh-chu button{background:#fff;border:1px solid currentColor;border-radius:9px;padding:4px 9px;font:inherit;font-size:12px;color:inherit;cursor:pointer}'
+    + '.ds-cay-chu{flex:1 0 100%;display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}.ds-cay-chu[hidden]{display:none}'
+    + '.ds-cay-chu a{background:#fff;border:1px solid currentColor;border-radius:14px;padding:4px 10px;color:inherit;text-decoration:none}'
+    + '.ds-cay-chu a.dang{font-weight:700;background:#fdf0d8}'
     + '.vo-chu{max-width:560px;margin:0 auto;padding:8px 16px 24px}'
     + '.vo-chu input[type=email],.vo-chu input[type=password]{display:block;width:100%;margin-top:4px;padding:11px 12px;font-size:16px;border:1px solid #c9d4c4;border-radius:10px}';
   document.head.append(st);
