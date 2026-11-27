@@ -70,15 +70,18 @@ function veTrangTab(goc, nd, ma, han, loiChao) {
   // Gợi ý cài app ra màn hình chính (ít bị mất phiên): chỉ khi thẻ "Cài app" của cai-app.js đang hiện cuối trang
   if (loiChao && nd.loiNhan.goi_y_cai_app && document.querySelector('.cai-app')) t['hom-nay'].append(h('p', { class: 'bao xanh' }, nd.loiNhan.goi_y_cai_app));
 
-  // HÔM NAY (tạm: trang cây như cũ; trang chủ: vườn + nhập mã)
+  // HÔM NAY (man-hinh/hom-nay.js: chào + thời tiết + việc hôm nay + tiến độ), rồi nhắc sau bán + trang cây khi mở bằng mã (?c=)
+  const coHomNay = typeof manHinhHomNay === 'function';
+  if (coHomNay) t['hom-nay'].append(manHinhHomNay(nd, ma, conHan));
   if (ma) {
     const phan = h('div', {});
     const hienKichHoat = () => { phan.textContent = ''; phan.append(manHinhKichHoat(nd, daKichHoat)); };
     phan.append(manHinhSauBan(nd, ma)); // mốc ngày 3/7 + chấm sao: hiện cả khi đã hết hạn
     if (conHan) phan.append(manHinhCham(nd, ma), manHinhNangCao(nd, ma, han));
     else phan.append(manHinhHetHan(nd, han, hienKichHoat));
-    t['hom-nay'].append(manHinhCoBan(nd, ma), phan);
-  } else t['hom-nay'].append(manHinhVuon(nd, ''), theNhapMa(nd));
+    if (coHomNay) t['hom-nay'].append(phan.firstChild, manHinhCoBan(nd, ma), phan); // sau bán lên trước trang cây
+    else t['hom-nay'].append(manHinhCoBan(nd, ma), phan);
+  } else if (!coHomNay) t['hom-nay'].append(manHinhVuon(nd, ''), theNhapMa(nd));
 
   // VƯỜN (tạm: kệ "Vườn của tôi" ở man-hinh/vuon.js)
   t.vuon.append(manHinhVuon(nd, ma));
