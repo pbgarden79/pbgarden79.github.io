@@ -33,7 +33,13 @@ function theNhapMa(nd, tieuDe) {
 async function khoiDong() {
   const goc = document.getElementById('app');
   const nd = await napNoiDung();
-  const ma = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const ts = new URLSearchParams(location.search);
+  let ma = (ts.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  const cayXem = ts.get('cay'); // chủ shop xem thử từng loại cây đang bán (ket-noi/chu-shop.js) → mã ảo XEM-<loại cây>
+  if (!ma && cayXem && (docPhienGoc() || {}).chu && nd.cay[cayXem] && nd.cay[cayXem].ten) {
+    ma = 'XEM-' + cayXem;
+    nd.combo[ma] = { cay: cayXem, goi: '👑 Xem thử (chủ shop)', chau: '', gia_the: '' };
+  }
   if (ma && !nd.combo[ma]) { // combo mới tạo từ Telegram: hỏi Supabase mã này là cây gì (chỉ loại cây + gói, không dữ liệu khách)
     const r = await sbFetch('/rest/v1/rpc/combo_cong_khai', { method: 'POST', body: { p_ma: ma } });
     if (r.ok && r.data && r.data.cay) nd.combo[ma] = { cay: r.data.cay, goi: r.data.goi || '', chau: '', gia_the: '' };
