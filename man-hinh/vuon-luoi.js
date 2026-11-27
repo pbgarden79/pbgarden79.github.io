@@ -174,6 +174,11 @@ function manHinhVuonLuoi(nd, ma, conHan) {
       if (b) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
     };
     const hoi = h('a', { class: 'vl-loi', href: lienHe.querySelector('a').href, target: '_blank', rel: 'noopener' }, C.nut_hoi);
+    // Có tab Cây có vấn đề? mới (van-de-tab.js, bước 4) → nút dẫn sang tab đó, chọn sẵn cây này; không thì mở màn cũ ngay tại đây
+    if (typeof manHinhVanDeTab === 'function') {
+      const i = cacNut.findIndex(b => b._ten === 'vd');
+      if (i >= 0) cacNut[i] = h('a', { class: 'vl-loi', href: '#van-de/' + encodeURIComponent(c.ma) }, C.nut_vd);
+    }
     vo.append(h('div', { class: 'vl-cac-loi' }, ...cacNut, hoi),
       h('p', { class: 'nho vl-hoi-nho' }, hnThay(C.hoi_nho, { ma: c.ma })), panel);
     if (moPanel) { const b = cacNut.find(x => x._ten === moPanel); if (b) panel.append(b._ve()); else moPanel = ''; }
