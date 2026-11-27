@@ -20,27 +20,81 @@ async function napNoiDung() {
   return { cay, combo, goi, loiNhan, lienHe, dongY: dongY.trim(), sauBan };
 }
 
+/** Thẻ nhập mã cây in trên thẻ chăm (trang chủ, và tab Thêm). */
+function theNhapMa(nd, tieuDe) {
+  const o = h('input', { type: 'text', placeholder: 'Ví dụ: C001', maxlength: '10', autocapitalize: 'characters' });
+  const di = () => { const v = o.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); if (v) location.href = '/?c=' + v; };
+  o.onkeydown = e => { if (e.key === 'Enter') di(); };
+  return h('section', { class: 'the' }, h('h2', {}, tieuDe || '🌿 Cây của bạn'),
+    h('p', {}, 'Quét mã QR trên thẻ chăm, hoặc nhập mã cây in trên thẻ:'),
+    h('label', {}, 'Mã cây', o), h('button', { class: 'nut', onclick: di }, 'Xem cách chăm'), tieuDe ? '' : nutLienHe(nd.lienHe));
+}
+
 async function khoiDong() {
   const goc = document.getElementById('app');
   const nd = await napNoiDung();
   const ma = (new URLSearchParams(location.search).get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
-  goc.textContent = '';
-  if (!ma) { // vào thẳng trang chủ (không quét QR) → cho nhập mã cây in trên thẻ
-    const o = h('input', { type: 'text', placeholder: 'Ví dụ: C001', maxlength: '10', autocapitalize: 'characters' });
-    const di = () => { const v = o.value.toUpperCase().replace(/[^A-Z0-9]/g, ''); if (v) location.href = '/?c=' + v; };
-    o.onkeydown = e => { if (e.key === 'Enter') di(); };
-    if (docPhien()) goc.append(manHinhVuon(nd, '')); // máy đã kích hoạt: hiện vườn trước ô nhập mã
-    goc.append(h('section', { class: 'the' }, h('h2', {}, '🌿 Cây của bạn'),
-      h('p', {}, 'Quét mã QR trên thẻ chăm, hoặc nhập mã cây in trên thẻ:'),
-      h('label', {}, 'Mã cây', o), h('button', { class: 'nut', onclick: di }, 'Xem cách chăm'), nutLienHe(nd.lienHe)));
-    return;
-  }
-  if (!nd.combo[ma]) { // combo mới tạo từ Telegram: hỏi Supabase mã này là cây gì (chỉ loại cây + gói, không dữ liệu khách)
+  if (ma && !nd.combo[ma]) { // combo mới tạo từ Telegram: hỏi Supabase mã này là cây gì (chỉ loại cây + gói, không dữ liệu khách)
     const r = await sbFetch('/rest/v1/rpc/combo_cong_khai', { method: 'POST', body: { p_ma: ma } });
     if (r.ok && r.data && r.data.cay) nd.combo[ma] = { cay: r.data.cay, goi: r.data.goi || '', chau: '', gia_the: '' };
   }
-  if (!nd.combo[ma] || !nd.cay[nd.combo[ma].cay]) {
+  if (ma && (!nd.combo[ma] || !nd.cay[nd.combo[ma].cay])) {
+    goc.textContent = '';
     goc.append(h('section', { class: 'the' }, h('h2', {}, 'Pb Garden 79'), h('p', {}, nd.loiNhan.khong_thay_ma), nutLienHe(nd.lienHe)));
+    return;
+  }
+  // Đã có phiên trên máy này → hỏi hạn dùng. Có hạn (còn hoặc hết) = đã kích hoạt → khung 4 tab; chưa → trang cũ.
+  const r = docPhien() ? await goiHam('han_su_dung', {}, false) : null;
+  const han = r && r.ok ? r.data : null;
+  if (han && typeof khungTab === 'function') return veTrangTab(goc, nd, ma, han);
+  veTrangCu(goc, nd, ma, han);
+}
+
+/** Máy ĐÃ kích hoạt: khung 4 tab (khung-tab.js). Các tab chưa có màn mới thì dùng tạm màn đang có (bước 2–4 sẽ làm lại). */
+function veTrangTab(goc, nd, ma, han, loiChao) {
+  const conHan = han >= homNay();
+  const t = khungTab(goc).vung;
+  const daKichHoat = hanMoi => { layVuon(true); veTrangTab(goc, nd, ma, hanMoi, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(hanMoi) + '.'); };
+  if (loiChao) t['hom-nay'].append(h('p', { class: 'bao xanh' }, loiChao));
+
+  // HÔM NAY (tạm: trang cây như cũ; trang chủ: vườn + nhập mã)
+  if (ma) {
+    const phan = h('div', {});
+    const hienKichHoat = () => { phan.textContent = ''; phan.append(manHinhKichHoat(nd, daKichHoat)); };
+    phan.append(manHinhSauBan(nd, ma)); // mốc ngày 3/7 + chấm sao: hiện cả khi đã hết hạn
+    if (conHan) phan.append(manHinhCham(nd, ma), manHinhNangCao(nd, ma, han));
+    else phan.append(manHinhHetHan(nd, han, hienKichHoat));
+    t['hom-nay'].append(manHinhCoBan(nd, ma), phan);
+  } else t['hom-nay'].append(manHinhVuon(nd, ''), theNhapMa(nd));
+
+  // VƯỜN (tạm: kệ "Vườn của tôi" ở man-hinh/vuon.js)
+  t.vuon.append(manHinhVuon(nd, ma));
+
+  // CÂY CÓ VẤN ĐỀ? (man-hinh/van-de.js cần biết cây nào → trang chủ thì nhắc chọn cây trong vườn)
+  if (ma && typeof manHinhVanDe === 'function') t['van-de'].append(manHinhVanDe(nd, ma, conHan));
+  else t['van-de'].append(h('section', { class: 'the' }, h('h3', {}, '🩺 Cây có vấn đề?'),
+    h('p', { class: 'nho' }, 'Dạ anh/chị chọn cây đang gặp vấn đề trong vườn bên dưới để xem dấu hiệu và cách xử lý ạ.')), manHinhVuon(nd, ''));
+
+  // THÊM: gói của tôi, thư viện, hỏi shop, xem cây khác, quyền riêng tư
+  const goi = h('section', { class: 'the' }, h('h3', {}, '⭐ Gói của tôi'),
+    h('p', { class: 'han' + (conHan ? '' : ' den-han') }, conHan
+      ? 'Còn ' + soNgayConLai(han) + ' ngày · dùng đến hết ' + ngayVN(han)
+      : 'Đã hết hạn ngày ' + ngayVN(han)));
+  if (!conHan && ma) goi.append(h('a', { class: 'nut', href: '#hom-nay' }, 'Xem cách gia hạn'));
+  t.them.append(goi);
+  if (typeof theThuVien === 'function') t.them.append(theThuVien(conHan));
+  t.them.append(h('section', { class: 'the' }, h('h3', {}, '💬 Hỏi shop'), nutLienHe(nd.lienHe, ma, ma && nd.combo[ma].cay)),
+    theNhapMa(nd, '🔎 Xem cây khác'),
+    h('section', { class: 'the' }, h('details', { class: 'gon' }, h('summary', {}, '🔒 Quyền riêng tư'), h('p', { class: 'nho' }, nd.dongY))));
+}
+
+/** Máy CHƯA kích hoạt: giữ nguyên trang cũ (cách chăm cơ bản + nút mở phần nâng cao). */
+function veTrangCu(goc, nd, ma, han) {
+  goc.textContent = '';
+  if (!ma) { // vào thẳng trang chủ (không quét QR) → cho nhập mã cây in trên thẻ
+    if (docPhien()) goc.append(manHinhVuon(nd, '')); // có phiên: hiện vườn trước ô nhập mã
+    goc.append(theNhapMa(nd));
+    if (typeof theThuVien === 'function') goc.append(theThuVien()); // thư viện hướng dẫn (man-hinh/thu-vien.js)
     return;
   }
   if (docPhien()) goc.append(manHinhVuon(nd, ma));
@@ -48,15 +102,13 @@ async function khoiDong() {
   const vung = h('div', {});
   goc.append(vung);
 
-  const hienKichHoat = () => { vung.textContent = ''; vung.append(manHinhKichHoat(nd, han => {
+  const hienKichHoat = () => { vung.textContent = ''; vung.append(manHinhKichHoat(nd, hanMoi => {
     layVuon(true); // vừa kích hoạt → đọc lại vườn (bản cũ chưa có cây này)
-    vung.textContent = ''; vung.append(h('p', { class: 'bao xanh' }, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(han) + '.'), manHinhSauBan(nd, ma), manHinhCham(nd, ma), manHinhNangCao(nd, ma, han));
+    if (typeof khungTab === 'function') return veTrangTab(goc, nd, ma, hanMoi, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(hanMoi) + '.');
+    vung.textContent = ''; vung.append(h('p', { class: 'bao xanh' }, nd.loiNhan.kich_hoat_xong + ' ' + ngayVN(hanMoi) + '.'), manHinhSauBan(nd, ma), manHinhCham(nd, ma), manHinhNangCao(nd, ma, hanMoi));
     vung.dispatchEvent(new Event('kich-hoat-xong'));
   })); };
 
-  // Đã có phiên trên máy này → hỏi hạn dùng; chưa có → nút mở kích hoạt (chưa tạo phiên).
-  const r = docPhien() ? await goiHam('han_su_dung', {}, false) : null;
-  const han = r && r.ok ? r.data : null;
   if (han) vung.append(manHinhSauBan(nd, ma)); // mốc ngày 3/7 + chấm sao: hiện cả khi đã hết hạn
   if (han && han >= homNay()) vung.append(manHinhCham(nd, ma), manHinhNangCao(nd, ma, han));
   else if (han) vung.append(manHinhHetHan(nd, han, hienKichHoat));
@@ -68,6 +120,11 @@ async function khoiDong() {
     let vd = manHinhVanDe(nd, ma, !!(han && han >= homNay()));
     vung.before(vd);
     vung.addEventListener('kich-hoat-xong', () => { const moi = manHinhVanDe(nd, ma, true); vd.replaceWith(moi); vd = moi; });
+  }
+  if (typeof theThuVien === 'function') { // thư viện hướng dẫn: bài khóa mở khi còn hạn; vừa kích hoạt xong thì vẽ lại
+    let tv = theThuVien(!!(han && han >= homNay()));
+    goc.append(tv);
+    vung.addEventListener('kich-hoat-xong', () => { const moi = theThuVien(true); tv.replaceWith(moi); tv = moi; });
   }
 }
 
