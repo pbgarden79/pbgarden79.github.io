@@ -1,0 +1,126 @@
+{
+  "_ghi_chu": "Thư viện hướng dẫn ngắn (màn hình man-hinh/thu-vien.js). Mỗi bài: tieu_de, bieu_tuong, mien_phi (true = ai cũng đọc; false = mở khi còn hạn nâng cao/gói), gioi_thieu, buoc (4–6 bước ngắn), nguon (BẮT BUỘC, nguồn uy tín đã mở kiểm tra). Không khuyên thuốc/chế phẩm tự pha. Câu chữ phải chủ shop duyệt.",
+  "cau_chu": {
+    "tieu_de": "📚 Thư viện hướng dẫn",
+    "gioi_thieu": "Dạ mấy bài ngắn giúp cây khỏe hơn ạ. Bấm vào tên bài để xem.",
+    "khoa": "🔒 Dạ bài này nằm trong phần nâng cao ạ. Anh/chị kích hoạt bằng mã trên thẻ (miễn phí 7 ngày) hoặc gia hạn gói là đọc được ngay ạ."
+  },
+  "bai": [
+    {
+      "ma": "cham-nuoc-chau-tu-tuoi",
+      "bieu_tuong": "💧",
+      "tieu_de": "Châm nước bể chậu tự tưới",
+      "mien_phi": true,
+      "gioi_thieu": "Dạ chậu tự tưới có bể nước dưới đáy, đất tự hút nước lên dần nên anh/chị không cần tưới mỗi ngày ạ.",
+      "buoc": [
+        "Xem phao hoặc ô báo nước (nếu chậu có); bể gần cạn mới châm, không cần châm hằng ngày ạ.",
+        "Châm nước sạch, bằng nhiệt độ phòng, đổ từ từ vào lỗ châm; nước bắt đầu tràn ra lỗ tràn là đủ ạ.",
+        "Nước tràn xuống đĩa lót thì đổ đi trong khoảng 1 giờ, đừng để chậu đứng trong nước ạ.",
+        "Bể còn nước mà đất mặt ướt sũng, lá vàng hoặc rũ: để bể cạn vài ngày rồi mới châm lại ạ.",
+        "Trời nóng, chỗ nhiều nắng hay phòng máy lạnh thì bể cạn nhanh hơn, anh/chị xem bể thường hơn ạ.",
+        "Thỉnh thoảng đổ hết nước cũ, rửa bể khi thấy nước đục hoặc đóng rêu ạ."
+      ],
+      "nguon": [
+        { "ten": "Virginia Tech (VCE)", "link": "https://www.pubs.ext.vt.edu/SPES/spes-804.html" },
+        { "ten": "ĐH Maryland (UMD Extension)", "link": "https://extension.umd.edu/resource/self-watering-containers" },
+        { "ten": "ĐH Connecticut (UConn)", "link": "https://homegarden.cahnr.uconn.edu/factsheets/houseplant-watering-recommendations/" }
+      ]
+    },
+    {
+      "ma": "mua-mua-nha-trang",
+      "bieu_tuong": "🌧️",
+      "tieu_de": "Chăm cây mùa mưa Nha Trang (khoảng tháng 9–12)",
+      "mien_phi": true,
+      "gioi_thieu": "Dạ trời âm u, ẩm thì cây uống ít nước hơn, dễ úng rễ nhất là mùa này ạ.",
+      "buoc": [
+        "Tưới hoặc châm bể thưa hơn mùa nắng; lần nào cũng sờ đất trước ạ.",
+        "Sờ sâu khoảng 2–3 cm, đất còn ẩm thì chưa tưới ạ.",
+        "Tưới vào buổi sáng để đất kịp ráo trước khi trời tối ạ.",
+        "Nước đọng ở đĩa lót thì đổ đi sau khoảng 30 phút ạ.",
+        "Đưa cây lại gần chỗ sáng hơn (vẫn tránh nắng chiếu thẳng), để các chậu cách nhau cho thoáng gió ạ."
+      ],
+      "nguon": [
+        { "ten": "ĐH Wisconsin (UW Extension)", "link": "https://hort.extension.wisc.edu/articles/edema/" },
+        { "ten": "Virginia Tech (VCE)", "link": "https://www.pubs.ext.vt.edu/SPES/spes-804.html" },
+        { "ten": "ĐH Florida (UF/IFAS)", "link": "https://gardeningsolutions.ifas.ufl.edu/plants/houseplants/houseplant-care/" }
+      ]
+    },
+    {
+      "ma": "mua-nang-nong-nha-trang",
+      "bieu_tuong": "☀️",
+      "tieu_de": "Chăm cây mùa nắng nóng Nha Trang (khoảng tháng 4–8)",
+      "mien_phi": true,
+      "gioi_thieu": "Dạ trời nóng và nhiều nắng thì đất khô nhanh hơn, cây cần được để ý thường hơn ạ.",
+      "buoc": [
+        "Sờ đất hoặc xem bể nước thường hơn mùa mưa ạ.",
+        "Vẫn chỉ tưới khi đất mặt khô khoảng 2–3 cm; tưới đẫm tới khi nước chảy ra lỗ thoát rồi đổ nước đọng ạ.",
+        "Dùng nước bằng nhiệt độ phòng, không dùng nước lạnh hay nước phơi ngoài nắng ạ.",
+        "Dời cây khỏi chỗ nắng chiều hắt qua cửa kính, hoặc gần bếp, chỗ nóng ạ.",
+        "Không để cây ngay luồng gió máy lạnh thổi thẳng, gió khô làm lá mất nước nhanh ạ."
+      ],
+      "nguon": [
+        { "ten": "Virginia Tech (VCE)", "link": "https://www.pubs.ext.vt.edu/SPES/spes-804.html" },
+        { "ten": "ĐH Florida (UF/IFAS)", "link": "https://gardeningsolutions.ifas.ufl.edu/plants/houseplants/houseplant-care/" },
+        { "ten": "ĐH Connecticut (UConn)", "link": "https://homegarden.cahnr.uconn.edu/factsheets/houseplant-watering-recommendations/" }
+      ]
+    },
+    {
+      "ma": "bon-phan-cay-la",
+      "bieu_tuong": "🧪",
+      "tieu_de": "Bón phân cho cây lá",
+      "mien_phi": false,
+      "gioi_thieu": "Dạ cây trồng chậu cần ít phân thôi ạ, bón thiếu một chút còn đỡ hơn bón quá tay.",
+      "buoc": [
+        "Cây mới mua, đất còn đủ chất khoảng 2–3 tháng nên chưa cần bón ạ.",
+        "Mới thay chậu, đất mới cũng chưa cần bón; cây đang yếu thì nhắn shop xem trước ạ.",
+        "Chỉ bón khi cây đang ra lá mới, thường 1 lần/tháng là đủ ạ.",
+        "Dùng phân cân đối (ví dụ 20-20-20), pha loãng hơn hướng dẫn trên bao bì, khoảng 1/4 đến 1/2 liều ạ.",
+        "Thấy mép lá cháy khô hoặc mặt đất đóng lớp trắng: ngưng bón, tưới xả nước sạch cho trôi bớt ạ."
+      ],
+      "nguon": [
+        { "ten": "ĐH Arkansas (UADA Extension)", "link": "https://www.uaex.uada.edu/counties/white/news/horticulture/20210428RepottingHouseplants.aspx" },
+        { "ten": "Vườn Bách thảo New York (NYBG)", "link": "https://libguides.nybg.org/houseplantbasics" },
+        { "ten": "ĐH Nebraska (UNL Extension)", "link": "https://extensionpubs.unl.edu/publication/g2205/na/html/view" }
+      ]
+    },
+    {
+      "ma": "thay-chau",
+      "bieu_tuong": "🪴",
+      "tieu_de": "Thay chậu",
+      "mien_phi": false,
+      "gioi_thieu": "Dạ phần lớn cây lá chỉ cần thay chậu khoảng 3–5 năm một lần ạ.",
+      "buoc": [
+        "Dấu hiệu cần thay: đất khô rất nhanh sau khi tưới, cây nặng ngọn dễ ngã, lá mới nhỏ dần, mặt đất đóng lớp trắng ạ.",
+        "Chọn chậu chỉ lớn hơn chậu cũ vài cm và có lỗ thoát nước; chậu quá to giữ nước lâu, dễ úng ạ.",
+        "Dùng đất trồng mới, sạch; gỡ nhẹ rễ rối, cắt bỏ rễ đã thối, chết ạ.",
+        "Đặt cây ngang độ sâu cũ, mặt đất thấp hơn miệng chậu khoảng 2–3 cm, rồi tưới đẫm ạ.",
+        "Cây đang ở chậu tự tưới của shop thì anh/chị nhắn shop trước để được tư vấn cỡ chậu hợp ạ."
+      ],
+      "nguon": [
+        { "ten": "ĐH Arkansas (UADA Extension)", "link": "https://www.uaex.uada.edu/counties/white/news/horticulture/20210428RepottingHouseplants.aspx" },
+        { "ten": "ĐH Florida (UF/IFAS)", "link": "https://gardeningsolutions.ifas.ufl.edu/plants/houseplants/houseplant-care/" },
+        { "ten": "ĐH Connecticut (UConn)", "link": "https://homegarden.cahnr.uconn.edu/factsheets/houseplant-watering-recommendations/" }
+      ]
+    },
+    {
+      "ma": "lau-la-xoay-chau",
+      "bieu_tuong": "🍃",
+      "tieu_de": "Lau lá và xoay chậu",
+      "mien_phi": false,
+      "gioi_thieu": "Dạ việc nhỏ nhưng giúp lá sạch, cây mọc đều và sớm thấy sâu bệnh ạ.",
+      "buoc": [
+        "Khoảng mỗi tuần, lau nhẹ hai mặt lá bằng khăn mềm thấm nước sạch ạ.",
+        "Cây nhỏ có thể xịt nước sạch nhẹ lên lá; làm buổi sáng để lá kịp khô ạ.",
+        "Khi lau thấy sâu nhỏ hay đốm lạ, anh/chị chụp ảnh nhắn shop xem giúp ạ.",
+        "Cây hay nghiêng về phía sáng: cứ vài tuần xoay chậu 1/4 vòng cho cây mọc đều ạ.",
+        "Lau cả kính cửa sổ, kính bẩn có thể che bớt tới một nửa ánh sáng ạ."
+      ],
+      "nguon": [
+        { "ten": "ĐH Florida (UF/IFAS)", "link": "https://gardeningsolutions.ifas.ufl.edu/plants/houseplants/houseplant-care/" },
+        { "ten": "ĐH Nebraska (UNL Extension)", "link": "https://extensionpubs.unl.edu/publication/g2205/na/html/view" },
+        { "ten": "Vườn Bách thảo New York (NYBG)", "link": "https://libguides.nybg.org/houseplantbasics" }
+      ]
+    }
+  ],
+  "trang_thai": "Chủ shop duyệt nguyên văn 27/11/2026"
+}
