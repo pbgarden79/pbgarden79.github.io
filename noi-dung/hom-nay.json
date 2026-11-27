@@ -1,0 +1,39 @@
+{
+  "_ghi_chu": "Câu chữ màn HÔM NAY (man-hinh/hom-nay.js, bước 2 giao diện chuyên nghiệp). Sửa chữ ở đây, không cần đụng code. {nhiet} {so} {n} được thay bằng số. Ngưỡng nong_c / mua_mm_gio giống ngưỡng giao cây anh duyệt 24/11 (Apps Script A2b KHACH_CFG.GIAO). Lời nhắc thời tiết lấy từ 2 bài có nguồn trong huong-dan.json (mùa nắng nóng, mùa mưa). Thời tiết: MET Norway (miễn phí, CC BY 4.0, phải ghi công).",
+  "nguong": { "nong_c": 33, "mua_mm_gio": 1, "gio_toi": 12 },
+  "chao": {
+    "sang": "Dạ chào buổi sáng anh/chị 🌿",
+    "chieu": "Dạ chào buổi chiều anh/chị 🌿",
+    "toi": "Dạ chào buổi tối anh/chị 🌿"
+  },
+  "thoi_tiet": {
+    "tieu_de": "📍 Thời tiết Nha Trang",
+    "nong": "Dạ hôm nay trời nắng nóng tới {nhiet}°C ạ. Đất khô nhanh hơn, anh/chị để ý mực nước bể chậu thường hơn và dời cây khỏi chỗ nắng chiều hắt qua cửa kính giúp shop nhé.",
+    "mua": "Dạ sắp có mưa ạ. Trời ẩm thì cây uống ít nước hơn, anh/chị sờ đất trước khi châm bể, nước đọng ở đĩa lót thì đổ đi giúp shop nhé.",
+    "binh_thuong": "Dạ thời tiết hôm nay dễ chịu, anh/chị cứ chăm cây như bình thường ạ.",
+    "xem_them": "Xem thêm bài mùa nắng nóng / mùa mưa ở tab Thêm → Thư viện hướng dẫn.",
+    "loi": "Dạ chưa tải được dự báo thời tiết, anh/chị thử lại sau ạ.",
+    "ghi_cong": "Dự báo: MET Norway (CC BY 4.0)"
+  },
+  "viec": {
+    "tieu_de": "✅ Việc hôm nay",
+    "co_viec": "Dạ có {so} cây cần kiểm tra nước ạ.",
+    "khong_viec": "Dạ hôm nay chưa có cây nào cần kiểm tra nước ạ 🙂",
+    "huong_dan": "Nhìn mực nước bể chậu, cạn mới đổ. Kiểm tra xong bấm nút để ghi lại.",
+    "nut": "💧 Đã kiểm tra nước",
+    "da_ghi": "✅ Đã ghi, cảm ơn anh/chị ạ.",
+    "loi": "Chưa ghi được, anh/chị thử lại sau ít phút.",
+    "het_han": "Dạ nhắc kiểm tra nước nằm trong phần nâng cao, anh/chị gia hạn để dùng tiếp ạ.",
+    "o_con": "ngày nữa",
+    "o_nay": "hôm nay",
+    "o_tre": "ngày trễ"
+  },
+  "tien_do": {
+    "tieu_de": "🏡 Cây về nhà",
+    "dong": "Cây về nhà {n} ngày",
+    "toi_nay": "Hôm nay kiểm tra nước",
+    "toi_con": "Lần kiểm tra nước tới: {n} ngày nữa",
+    "toi_tre": "Đã trễ kiểm tra nước {n} ngày",
+    "xem_vuon": "Xem cả vườn ở tab Vườn"
+  }
+}
