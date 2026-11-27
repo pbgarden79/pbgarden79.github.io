@@ -1,0 +1,40 @@
+{
+  "_ghi_chu": "Câu chữ tab VƯỜN + màn CHI TIẾT CÂY (man-hinh/vuon-luoi.js, bước 3 giao diện chuyên nghiệp). Sửa chữ ở đây, không cần đụng code. {n} {ngay} được thay bằng số/ngày. Nút 'Đã kiểm tra nước', câu đã ghi/lỗi/hết hạn dùng chung noi-dung/hom-nay.json (anh đã duyệt). Chủ shop DUYỆT nguyên văn 27/11/2026.",
+  "luoi": {
+    "tieu_de": "🪴 Vườn của tôi",
+    "co_viec": "Dạ có {n} cây cần kiểm tra nước ạ.",
+    "tat_ca_on": "Dạ cây nào cũng đang ổn ạ 🙂",
+    "chu_thich": "🟢 ổn · 🟠 sắp tới hạn · 🔴 quá hạn kiểm tra nước",
+    "tim": "Tìm theo mã cây, ví dụ C001",
+    "khong_thay": "Dạ không thấy cây có mã này trong vườn ạ.",
+    "trong": "Dạ vườn mình chưa có cây nào ạ. Anh/chị quét mã QR trên thẻ chăm để thêm cây nha.",
+    "the_tre": "Trễ {n} ngày",
+    "the_nay": "Hôm nay kiểm tra",
+    "the_mai": "Mai kiểm tra",
+    "the_con": "Còn {n} ngày",
+    "the_da": "Đã kiểm tra",
+    "them_cay": "Thêm cây",
+    "them_cay_nho": "Hỏi shop",
+    "ghi_cong_anh": "Ảnh minh họa loại cây: Wikimedia Commons"
+  },
+  "chi_tiet": {
+    "quay_lai": "‹ Vườn của tôi",
+    "ve_nha": "Cây về nhà {n} ngày · từ ngày {ngay}",
+    "o_ve_nha": "ngày về nhà",
+    "o_lan": "lần kiểm tra",
+    "o_anh": "ảnh nhật ký",
+    "tt_ok": "Cây đang ổn",
+    "tt_sap": "Sắp tới hạn kiểm tra nước",
+    "tt_tre": "Đã trễ kiểm tra nước",
+    "lan_cuoi": "Lần kiểm tra cuối: {ngay}",
+    "chua_lan": "Chưa ghi lần kiểm tra nào",
+    "lan_toi": "Lần tới: {ngay}",
+    "da_hom_nay": "✅ Dạ hôm nay đã ghi kiểm tra nước rồi ạ.",
+    "lich": "📅 Xem lịch kiểm tra nước",
+    "nut_nka": "📸 Nhật ký ảnh",
+    "nut_vd": "🩺 Cây có vấn đề?",
+    "nut_hoi": "💬 Hỏi shop",
+    "hoi_nho": "Dạ anh/chị bấm Hỏi shop, shop sẽ biết anh/chị đang hỏi cây mã {ma} ạ.",
+    "cach_cham": "🌿 Cách chăm cây này"
+  }
+}
