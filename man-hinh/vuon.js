@@ -41,7 +41,8 @@ function manHinhVuon(nd, maDangXem) {
 function manHinhCham(nd, ma) {
   const vung = h('div', {});
   const ve = ds => {
-    const c = ds.find(x => x.ma === ma);
+    const c = ds.find(x => x.ma === ma) // chủ shop xem thử loại cây chưa có combo → thẻ giả, bấm không ghi gì
+      || (typeof laMaXem === 'function' && laMaXem(ma) && { ma, cay: nd.combo[ma].cay, kich_hoat: homNay(), ngay_cham: [] });
     vung.textContent = '';
     if (!c) return;
     const cay = nd.cay[c.cay], t = trangThaiCham(c, cay);

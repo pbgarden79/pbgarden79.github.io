@@ -2,6 +2,10 @@
 // Chỉ hiện cho máy đã kích hoạt ĐÚNG mã cây này (hàm sau_ban_cua_toi trong supabase/07_sau_ban.sql).
 function manHinhSauBan(nd, ma) {
   const vung = h('div', {});
+  if (typeof laMaXem === 'function' && laMaXem(ma)) { // chủ shop xem thử: mốc ngày đầu, không đọc máy chủ
+    if (docPhien()) vung.append(veSauBan(nd, ma, { kich_hoat: homNay() }));
+    return vung;
+  }
   goiHam('sau_ban_cua_toi', { p_ma: ma }, false).then(r => {
     if (r.ok && r.data && r.data.kich_hoat) vung.append(veSauBan(nd, ma, r.data));
   });
